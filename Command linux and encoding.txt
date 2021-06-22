@@ -1,0 +1,2 @@
+1. file -i filename : xem file hiện tại thuộc kiểu encoding gì.
+2. cat filename : xem nội dung của file

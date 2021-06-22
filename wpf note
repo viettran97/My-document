@@ -1,0 +1,543 @@
+1. Cho ẩn hay hiện một thuộc tính => dùng Visibility.
+ex : private void setDisplayDate()
+        {
+            if (clockSettings.IsDisplayDate == true)
+            {
+                lblDate.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                lblDate.Visibility = Visibility.Collapsed;
+            }
+        }
+
+2. Event :
+a) Closing : làm gì đó trước khi đóng
+b) Closed : làm gì đó sau khi đóng
+
+3. Đóng một ứng dụng dùng sự kiện : App.Current.Shutdown();
+
+4.Kéo một cửa sổ di chuyển dùng MouseDown:
+private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+5. Màu thay đổi khi di chuyển chuột vào hoặc ra cửa sổ:
+private void lblHour_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Brush brush = this.Background;
+            brush.Opacity = 0.4;
+            this.Background = brush;
+        }
+
+        private void lblHour_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Brush brush = this.Background;
+            brush.Opacity = 0;
+            this.Background = brush;
+        }
+
+6. Dictionary: Chứa một cặp giá trị <Key; Value>
+a) Dictionary<string, string> DATE_FORMATS = new Dictionary<string, string>() {
+            { "2020/September/01", "yyyy/MMMM/dd" },
+            { "09/01/2020", "MM/dd/yyyy" },
+        };
+b) Mỗi phần tử trong Dictionary (gồm một cặp Key - Value) được định nghĩa là một đối tượng có kiểu : KeyValuPair<TKey,Tvalue>
+c) Việc truy xuất các phần tử trong Dictionary giống như truy xuất các phần tử trong mảng nhưng thông qua Key.
+
+7. Storyboard/ Animation
+
+8.Cú pháp Comment trong XAML
+<!--Nội Dung -->
+
+9. SelectedItems : 1 phần tử đang được chọn
+    GetSelected(i) : lấy ra chỉ số của phần tử trong mảng.
+
+10. PasswordBox : Mắc định là dấu chấm tròn
+Muốn một kí tự tự quy định: thêm vào đăctính :  PasswordChar="kí tự cần hiển thị"
+Để giới hạn độ dài mật khẩu, dùng thuộc tính Maxlength = "số kí tự cho phép"
+
+11. Tạo MessageBox nhiều dòng:
+ MessageBox.Show("nội dung 1" + System.Environment.NewLine + "nội dung 2", "tên tiêu đề  MessageBox  ", (các nút hiển thị) MessageBoxButton.OK);
+** System.Environment.NewLine: cấu trúc giúp xuống dòng giành cho đoạn text trong MesageBox
+
+12. Lấy thông tin người log work trên jira : worklogAuthor = viet.tran.ry
+
+13. Lấy thông tin workload của một người fromdate đến to date :
+worklogAuthor = hoai.ho.ur  And worklogDate >= "2020/09/07" And worklogDate <= "2020/09/20"
+- Lấy tên user: jiraObj.GetUser(userID).DisplayName;
+
+
+14. So sánh 2 ngày xem ngày nào later hơn của kiểu dữ liệu DateTime dùng hàm DateTime.Compare
+ex: 
+if ((DateTime.Compare(txtFromDate.SelectedDate.Value, txtToDate.SelectedDate.Value)) > 0)
+                {
+                    MessageBox.Show("You selected from date later than to date. Please re-select", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+15. Save data into file
+CACH 1:
+a) Chỉ tới đường dẫn cần lưu dữ liệu
+ex: string path = @"D:\Save\Test.txt";
+b) Save 
+ex: string createText = m_emailBox.Text + "\n" + txtPassword.Password + "\n" + Environment.NewLine;
+     File.WriteAllText(path, createText);
+CACH 2:
+a) Tao mot duong dan bang Path.Combime
+ex: string[] paths = {@"d:\archives", "2001", "media", "images"};
+string fullPath = Path.Combine(paths);
+Console.WriteLine(fullPath);  ==>  d:\archives\2001\media\images
+
+b) Save file bang Properties lay cac properties cua lop hien tai
+ public void saveToFile()
+        {
+            // Create text
+            StringBuilder str = new StringBuilder();
+            foreach (var prop in this.GetType().GetProperties())
+            {
+                str.AppendLine(prop.Name + "="+ prop.GetValue(this, null));
+// Appendline : luu 1 properties xong xuong dong luu properties thu 2
+// Append: luu 1 properties xong luu properties thu 2 tren cung mot dong.
+                Console.WriteLine(str);
+            }
+            string writeText = str.ToString();
+            // Encode
+            writeText = Encode.EncryptionHelper.Encrypt(writeText, Pass_Phrase);
+            // Create parent folder
+            string folder = Path.GetDirectoryName(Save_Path);
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+            // Write
+            File.WriteAllText(Save_Path, writeText);
+        }
+
+16. Load data from file
+CACH 1:
+a) chỉ tới đường dẫn cần lưu
+ex: string path = @"D:\Save\Test.txt";
+b) Load data
+ex: StreamReader file = new StreamReader(path);
+            string line;
+            int index = 0;
+            while ((line = file.ReadLine()) != null)
+            {
+                if (index == 0)
+                {
+                    m_emailBox.Text = line;
+                }
+                else if (index == 1)
+                {
+                    txtPassword.Password = line;
+                }
+                index++;
+            }
+CACH 2:
+a) Khoi tao mot duwong dan da co du lieu bang Path.Combine
+
+b) Load data len
+ public void loadFromFile()
+        {
+            // Validate
+            if (!File.Exists(Save_Path))
+            {
+                return;
+            }
+            // Read
+            string text = File.ReadAllText(Save_Path);
+            // Decode
+            text = Encode.EncryptionHelper.Decrypt(text, Pass_Phrase);
+            // Store
+            string[] data = text.Split(System.Environment.NewLine.ToCharArray());
+            foreach (string line in data)
+            {
+                string[] contents = line.Split('=');
+                if (contents.Length == 2)
+                {
+                    PropertyInfo propertyInfo = this.GetType().GetProperty(contents[0]);
+                    propertyInfo.SetValue(this, contents[1]);
+                }
+            }
+        }
+    }
+
+17. Event GotFocus(TextBox): Khi ta di chuyển chuột vào vị trí textbox thì todo gì đó
+     Event LostFocus(TextBox): Khi ta di chuyển chuột khỏi vị trí textbox thì todo gì đó	      
+
+18. Trong XAML , muon thay doi mau cua window:
+    <Window.Background>
+        <SolidColorBrush Color="White" Opacity="0"/>
+    </Window.Background>			
+      
+19. Cách tạo nhiều cột nhanh trên DataGrid
+// Create table
+                dtgTime.Columns.Clear();
+                DataGridTextColumn col1 = new DataGridTextColumn();
+                col1.Header = "UserName";
+                col1.Binding = new Binding("Username");
+                dtgTime.Columns.Add(col1);
+
+                Style headerAlignmentStyle = new Style(typeof(DataGridColumnHeader));
+                headerAlignmentStyle.Setters.Add(new Setter(HorizontalContentAlignmentProperty, HorizontalAlignment.Center));
+                Style cellAlignmentStyle = new Style(typeof(DataGridCell));
+                cellAlignmentStyle.Setters.Add(new Setter(TextBlock.TextAlignmentProperty, TextAlignment.Center));
+
+                col1 = new DataGridTextColumn();
+                col1.Header = "Total WorkLog";
+                col1.Binding = new Binding("TotalLogWorkHour");
+                col1.CellStyle = cellAlignmentStyle;
+                col1.HeaderStyle = headerAlignmentStyle;
+                dtgTime.Columns.Add(col1);
+
+                DateTime date = txtFromDate.SelectedDate.Value;
+                int i = 1;
+
+                while(date <= txtToDate.SelectedDate.Value)
+                {
+                    // Create column
+                    col1 = new DataGridTextColumn();
+                    col1.Header = date.ToString("dd/MM/yyyy");
+                    col1.Binding = new Binding("WorklogDate" + i + "Hour");
+                    col1.CellStyle = cellAlignmentStyle;
+                    col1.HeaderStyle = headerAlignmentStyle;
+                    dtgTime.Columns.Add(col1);
+
+                    // Increase
+                    i++;
+                    date = date.AddDays(1);
+                }
+
+20. Cách tăng độ dày của line or saparetor dùng StrokeThickness.
+
+21. Cách dùng propertiyInfo trong c#
+ex:
+InformationPerTicket ticket = new InformationPerTicket();
+
+// Lấy thuộc tính có tên là "WorklogDate" + dateIndex + "Hour" gán cho propertyInfo
+PropertyInfo propertyInfo = ticket.GetType().GetProperty("WorklogDate" + dateIndex + "Hour");
+
+// set giá trị workLoged vào ticket
+propertyInfo.SetValue(ticket, (double)propertyInfo.GetValue(ticket) + workLoged);
+
+22. Sự kiện nhấn vào một hàng trong datagrid xong hiển thị nội dung của hàng đó lên một gui mới
+ private void dtgTime_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataGridRow grid = sender as DataGridRow;
+
+			// nếu chọn 1 hàng bất kì
+            if (grid != null && grid.IsSelected)
+            {
+
+                // Detect current row
+                var currentRowIndex = dtgTime.Items.IndexOf(dtgTime.CurrentItem);
+
+                // Put data of row on gui
+                dtgdetailinf.ItemsSource = ((List<NewDataType.PersonalWorklogInfo>)dtgTime.ItemsSource)[currentRowIndex].InformationPerTickets;
+            }
+        }
+
+23. Có thể adđ nhiều thuộc tính cho một đối tượng
+
+ex: listalldata.Add(new Worklog()
+                        {
+                            Username = items[i].SelectToken("author.displayName").ToString(),
+                            Timespendsecond = (double)items[i].SelectToken("timeSpentSeconds"),
+                            Started = (DateTime)items[i].SelectToken("started"),
+                        });
+						SelectToken: Truy cập từng trương nhỏ của một item.
+// listalldata là một mảng có kiểu là Worklog
+****************************************************************
+- UI Design có tên đầy đủ là User Interface Design: nghĩa là thiết kế giao diện người dùng.
+- UX Design được viết đầy đủ là User Experience Design: nghĩa là thiết kế tối ưu trải nghiệm người dùng.
+24. Job Queue in C#
+**********Lập trình bất đồng bộ asynchronous*************
+Từ .NET Framework 4.5 nó thêm vào thư viện có tên Task Parallel Library (TPL) - TPL giúp lập trình chạy song song (đa luồng) dễ dàng hơn. Trong C# đồng thời nó thêm vào hai từ khóa là async và await, đây là hai từ khóa chính để sử dụng trong lập trình bất đồng bộ. 
+- Bình thường, khi lập trình gọi một phương thức nào đó thì phương thức đó chạy và kết thúc thì các dòng code tiếp theo sau lời gọi phương thức đó mới được thực thi, đó là chạy đồng bộ, có nghĩa là thread gọi phương thức bị khóa lại cho đến khi phương thức kết thúc.
+
+LỚP TASK:
+- Lớp Task nó biểu thị tác vụ bất đồng bộ, từ đó ta chạy được code bất đồng bộ. Nếu tác vụ bất đồng bộ đó thi hành xong có kiểu trả về thì dùng Task<T> với T là kiểu trả về.
+- Cần sử dụng các namespace sau để có thư viện về Task
+using System.Threading;
+using System.Threading.Tasks;
+/////////////
+- Asychronous: là khả năng thực thi các tác vụ độc lập nhau, có nghĩa là chúng không nhất thiết phải chạy một cách tuần tự (có thể chạy song song với nhau) hoặc xử lý này không phải đợi xử lý khác giúp cho việc cải thiện hiệu suất hoạt động của ứng dụng. Trong C# bắt đầu thực thi từ phương thức Main và kết thúc khi phương thức Main được trả về. Trong đó tất cả các xử lý thực hiện một cách tuần tự hết cái này đến cái khác. Một xử lý phải đợi xử lý trước đó hoàn thành.
+-Trong lập trình bất đồng bộ phương thức được gọi sẽ được chạy trong background và việc gọi thread là không bị block. Sau khi gọi phương thức thực thi, luồng trở lại gọi và thực thi những tác vụ khác. Thông thường chúng sử dụng Thread hoặc Task.
+- Chúng ta có thể tạo thread bằng việc sử dụng Thread class hoặc sử dụng asynchronous patterns được cung cấp bởi .Net để thực hiện lập trình bất đồng bộ
+
+-  công nghệ lập trình đa luồng(multiple thread), với mỗi thread chúng ta tạo ra trong code sẽ cần một thread tương ứng của CPU. Nó cũng thể coi là một dạng lập trình bất đồng bộ hay có thể gọi là một bộ phận của Asynchronous programing hiện nay
+- Với công nghệ Asynchronous trong .Net hiện nay, nó có thể chạy nhiều taks trong cùng một thread hoặc nhiều thread khác nhau tùy tình huống cự thể. Rõ ràng đây là một ưu điểm lớn giúp cải thiện hiệu suất tốt hơn cho ứng dụng so với sử 'dụng Multiple Thread'
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if()
+            await MoveGui();
+        }
+		
+******BackgroundWorker in C#***********
+- BackgroundWorker component provides a slightly easier way to perform a background task.
+- The key pieces to the BackgroundWorker are:
+   
+    + RunWorkerAsync—The UI thread (the main program) calls this method to start the worker.
+    + DoWork—The DoWork event is where the worker does its work. It should periodically check its CancellationPending property to see if the UI thread is trying to make it stop. If the worker is stopped, the event handler should set the event’s e.Cancel property to true and return.
+    + CancelAsync—The UI thread can call this method to tell worker to stop. This sets the worker’s CancellationPending to true.
+    + ReportProgress—The worker can call this method to pass progress information back to the UI thread.
+    + ProgressChanged—This event occurs when the worker calls ReportProgress. The UI thread can update labels, progress bars, and so forth to report progress to the user. (This is a lot easier than using InvokeRequired and Invoke to let a background thread call methods on the UI thread.)
+    + RunWorkerCompleted—This event occurs when the worker’s DoEvent event handler returns. The UI thread can take action to clean up here. The e.Cancelled property tells whether the worker was stopped (as opposed to finishing its task). 
+	
+	*********Dispatcher**************
+	this.Dispatcher.Invoke() ==> update một giá trị trên gui để gán vào 1 biến bên trong backgpund thread và ngược lại.
+	
+	*****
+	this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                        (ThreadStart)delegate()
+                        {
+                            txtName.Text = "Here is some new text.";
+                        }
+                          );
+	
+	this.Dispatcher.BeginInvoke() method takes two parameters. The first indicates the priority of the task.
+	The second BeginInvoke() parameter is a delegate that points to the method with the code you want to execute
+	However this approach has a drawback since if we access shared data we need to use locking.
+	
+	When we create a new thread for offloading the work and want to update the UI from the other thread then we must need Dispatcher. 
+	Only Dispatcher can update the objects in the UI from non-UI thread.
+	Dispatcher provides two methods for registering method to execute into the message queue:
+    Invoke: Invoke method takes an Action or Delegate and execute the method synchronously. That means it does not return until the Dispatcher complete the execution of the method.
+    BeginInvoke: BeginInvoke method take a Delegate but it executes the method asynchronously. That means it immediately returns before calling the method.
+
+	
+**THREAD BETWEEN MAIN THREAD WITH FUNCTION THEAD ****
+** Nó sẽ ưu tiên thực thi trong hàm main trước, nếu hàm main có sleep(t) thì sau khi t thời gian thì mặc kệ thraed kia làm dược bao nhiêu công việc thì thread cũng quay
+về thực hiện lại các công việc cho xong trong main rồi mới tiếp tục thực hiện việc trong thread kia. 
+- To manage thread we use Sleep() method for making a thread pause for a specific period of time.
+
+*****Thread.Join() là một method thông báo rằng hãy chờ thread này hoàn thành rồi thread cha mới được tiếp tục chạy. *****
+ex:
+using System;
+using System.Threading;
+
+namespace MultithreadingApplication {
+   class ThreadCreationProgram {
+      public static void CallToChildThread() {
+         Console.WriteLine("Child thread starts");
+         
+         // the thread is paused for 5000 milliseconds
+         int sleepfor = 5000; 
+         
+         Console.WriteLine("Child Thread Paused for {0} seconds", sleepfor / 1000);
+         Thread.Sleep(sleepfor);
+         Console.WriteLine("Child thread resumes");
+      }
+      
+      static void Main(string[] args) {
+         ThreadStart childref = new ThreadStart(CallToChildThread);
+         Console.WriteLine("In Main: Creating the Child thread");
+         
+         Thread childThread = new Thread(childref);
+         childThread.Start();
+         Console.ReadKey();
+      }
+   }
+}
+
+When the above code is compiled and executed, it produces the following result −
+
+In Main: Creating the Child thread
+Child thread starts
+Child Thread Paused for 5 seconds
+Child thread resumes
+
+- The Abort() method is used for destroying threads.
+ex:
+Live Demo
+
+using System;
+using System.Threading;
+
+namespace MultithreadingApplication {
+   class ThreadCreationProgram {
+      public static void CallToChildThread() {
+         try {
+            Console.WriteLine("Child thread starts");
+            
+            // do some work, like counting to 10
+            for (int counter = 0; counter <= 10; counter++) {
+               Thread.Sleep(500);
+               Console.WriteLine(counter);
+            }
+            
+            Console.WriteLine("Child Thread Completed");
+         } catch (ThreadAbortException e) {
+            Console.WriteLine("Thread Abort Exception");
+         } finally {
+            Console.WriteLine("Couldn't catch the Thread Exception");
+         }
+      }
+      static void Main(string[] args) {
+         ThreadStart childref = new ThreadStart(CallToChildThread);
+         Console.WriteLine("In Main: Creating the Child thread");
+         
+         Thread childThread = new Thread(childref);
+         childThread.Start();
+         
+         //stop the main thread for some time
+         Thread.Sleep(2000);
+         
+         //now abort the child
+         Console.WriteLine("In Main: Aborting the Child thread");
+         
+         childThread.Abort();
+         Console.ReadKey();
+      }
+   }
+}
+/////
+When the above code is compiled and executed, it produces the following result −
+
+In Main: Creating the Child thread
+Child thread starts
+0
+1
+2
+In Main: Aborting the Child thread
+Thread Abort Exception
+Couldn't catch the Thread Exception 
+
+?????????????????????Thread*************************
+- The Request Life cycle of a Thread in C# 
+
+request > thread object > resource Allocated > task Exucuted > Gerbage Collection
+
+These steps are going to be repeated again and again for each request that comes in a multithread application.  
+That means every time a new thread object created and get allocated in the memory. 
+If there are many requests then there will be many thread objects and if there are many thread objects then there will be load on the memory which slows down your application.
+
+- To improve performance . we replace Gerbage Collection > Thread Pool.
+Thread Pool in C#:
+ 
+Thread include 3 method:
+
+    1 : Thread Join
+	  + Join method when attached to any thread, it makes that thread to execute first and halts other threads
+    2 : Thread Sleep
+	  + Thread.Sleep a method used to suspend current thread for a specific interval of time. 
+	  Time can be specified in milliseconds or Timespan. 
+	  While in a Sleep mode a method does not consumes any CPU resources so indirectly it save memory for other thread processes.
+    3 : Thread Abort
+	  + Abort helps to end or abort any thread to process it further.
+
+**THREAD BETWEEN FUNCTION THREAD WITH FUNCTION THEAD ****
+- Nó sẽ random giữa 2 function tức là tùy vào hệ điều hành nó sẽ cho cái nào chạy trước. muốn quy định ta phải set độ ưu tiên. 
+ex:
+using System; 
+using System.Threading; 
+  
+public class Geek { 
+  
+    // static method one 
+    public static void method1() 
+    { 
+  
+        // It prints numbers from 0 to 10 
+        for (int I = 0; I <= 10; I++) { 
+  
+            Console.WriteLine("Method1 is : {0}", I); 
+  
+            // When the value of I is equal to  
+            // 5 then this method sleeps for  
+            // 6 seconds and after 6 seconds  
+            // it resumes its working 
+            if (I == 5) { 
+                Thread.Sleep(6000); 
+            } 
+        } 
+    } 
+  
+    // static method two 
+    public static void method2() 
+    { 
+  
+        // It prints numbers from 0 to 10 
+        for (int J = 0; J <= 10; J++) { 
+  
+            Console.WriteLine("Method2 is : {0}", J); 
+        } 
+    } 
+} 
+  
+// Driver Class 
+public class GFG { 
+  
+    // Main Method 
+    static public void Main() 
+    { 
+  
+        // Calling static methods 
+        Geek.method1(); 
+        Geek.method2(); 
+    } 
+}
+	
+	*****************************Mô hình MVC****************
+	MVC đó là một mô hình lập trình, cố gắng chia code thành 3 phần: model triển khai các mô hình dữ liệu, truy cập dữ liệu. view biểu diễn dữ liệu cho người dùng, controller nhận các yêu cầu browser gửi đến và trả về http response(gửi lên GUI).
+- Controllers(Business Logic Layer ) : nơi chứa các lớp sẽ nhận yêu cầu gửi đến và trả về nội dung Response(tầng này chứa các hàm thực thi, giúp xử lý sự kiện xảy ra trên tầng Presentation Layer.)
+ ***đây là tầng giúp kết nối giữa tầng model và tầng view trong mô hình MVC, có nghĩa là nếu phía client yêu cầu hiển thị dữ liệu thì controller gọi giữ liệu từ model và trả về cho view vì view tương tác trực tiếp với client
+  + Controller: The controller handles the user request. Typically, the user uses the view and raises an HTTP request, which will be handled by the controller. The controller processes the request and returns the appropriate view as a response.(Controller is the request handler.)
+  + The Controller in MVC architecture handles any incoming URL request. The Controller is a class, derived from the base class System.Web.Mvc.Controller. Controller class contains public methods called Action methods
+  + The Controller handles incoming URL requests. MVC routing sends requests to the appropriate controller and action method based on URL and configured Routes.
+  + All the public methods in the Controller class are called Action methods.
+  + The Controller class must be derived from System.Web.Mvc.Controller class.
+  + The Controller class name must end with "Controller".
+  + A new controller can be created using different scaffolding templates. You can create a custom scaffolding template also.
+
+
+- Views(Presentation Layer): chứa các file .cshtml để dựng HTML
+  *****là tầng giao diện, hiển thị dữ liệu được truy xuất từ tầng model. Tầng này tương đương với tầng Presentation Layer trong cấu trúc Three – Tier.
+  View: View in MVC is a user interface. 
+  View display model data to the user and also enables them to modify them. 
+  View in ASP.NET MVC is HTML, CSS, and some special syntax (Razor syntax) that makes it easy to communicate with the model and the controller.(View is the User Interface.)
+- Models(Data Access Laye): nơi chứa các lớp cung cấp, xử lý dữ liệu, truy cập dư liệu(tầng này chứa hàm kết nối với các hệ quản trị cở sở dữ liệu như SQL Server, Mysql, Oracle …)
+Model chứa thuuocj tính(thường các thuộc tính có kết nối giữa GUI và database (thuoccj tính nằm trên GUI)) và method (lưu or load )
+Model: Model represents the shape of the data. A class in C# is used to describe a model. Model objects store data retrieved from the database. (Model represents the data.)
+
+Ví dụ: User yêu cầu hiển thị thông tin cá nhân của user
+
+    1.User gửi một yêu cầu tới controller.
+    2. Controller nhận yêu cầu, xử lý yêu cầu, nếu yêu cầu cần truy xuất dữ liệu thì controller sẽ gửi yêu đó xuống tầng model để truy xuất dữ liệu
+    3. Tầng model sẽ lấy dữ liệu từ database sau đó truyền dữ liệu qua tầng view thông qua tầng controller để tầng view hiển thị dữ liệu cho User
+    4. User sẽ thấy thông tin hiển thị ở giao diện và cụ thể ở đây là tầng view
+	
+*****Dựa vào hình mô phỏng phía trên này thì mình sẽ khái quá sơ qua cơ chế hoạt động của ASP.Net MVC
+
+    1.User gửi 1 yêu cầu tới server bằng cách truyền vào 1 URL trong browser
+    2.Yêu cầu đó được gửi tới controller đầu tiên, controller sẽ xử lý yêu cầu, nếu yêu cầu cần truy xuất dữ liệu thì controller sẽ chuyển qua tầng model
+    3.Tại tầng model, dữ liệu được truy xuất từ database và sau đó truyền qua view thông qua controller
+    4.Controller sẽ giúp dữ liệu được chuyển từ model qua view
+    5.View là tầng cuối cùng giao tiếp với User, mọi dữ liệu sẽ được hiển thị cho User thông qua tầng View
+
+******Những ưu điểm mà ASP.Net MVC mạng lại cho chúng ta:
+
+    Do sử dụng mô hình MVC nên trong ASP.Net MVC đã tách biệt được các tầng trong mô hình lập trình web vì vậy giúp tối ưu ứng dụng và dễ dàng trong việc viết code, giao diện
+    Giao diện trong ASP.Net MVC sử dụng công nghệ thiết kế web HTML, CSS nền việc thiết kế giao diện trở nên dễ dàng và giúp cho designer linh hoạt trong việc thiết kế
+    ASP.Net MVC không sử dụng view state vì vậy trang web không bị tăng kích thước do đó hiệu năng hoạt động không bị bị giảm
+	
+	****** Deep MVC****************
+- In the ASP.NET Web Forms application, every URL must match with a specific .aspx file 
+ a URL http://domain/studentsinfo.aspx must match with the file studentsinfo.aspx that contains code and markup for rendering a response to the browser. 
+- Routing enables us to define a URL pattern that maps to the request handler
+- This request handler can be a file or class. 
+In ASP.NET Webform application, request handler is .aspx file, and in MVC, it is the Controller class and Action method. 
+For example, http://domain/students can be mapped to http://domain/studentsinfo.aspx in ASP.NET Webforms, and the same URL can be mapped to Student Controller and Index action method in MVC. 
+**********Route************
+- Route defines the URL pattern and handler information. 
+All the configured routes of an application stored in RouteTable and will be used by the Routing engine to determine appropriate handler class or file for an incoming request. 
+
+
+
+	

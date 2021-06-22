@@ -1,0 +1,807 @@
+************DELEGATE(giống con trỏ hàm trong C++)*****************************
+- Delegate là những kiểu dư liệu mà biến tạo ra từ nó chứa tham chiếu tới phương thức(hàm).
+- Bến tạo ra từ 1 kiểu delegate gọi là biến delegate.
+- Nó giống con trỏ hàm bên c++
+- Delegate được dùng phổ biến khi gán các biểu thức lambda
+- khai báo delegate giống như cách khai báo phương thức nhưng có thêm từ khóa delegate và không có thân phương thứ
+ex: public delegate void ShowLog(string message);
+
+- Delegate giống như một kiểu dữ liệu, khi ta khai báo 1 delegate, tiweeps theo khai báo 1 biến kiểu delegate, cho biến đó trỏ tới một hàm cùng kiểu trả về và kiểu tham ssos truyền vào(tên hàm), khi biến delegate thực thi thì chính hàm đó đang thực thi
+- Một delegate có thể đưa vào nó nhiều phương thức để một lần gọi thi hành tất cả các phương thức nó chứa
+
+    Toán tử += Nối thêm một phương thức vào delegate, ví dụ delegatevar += method1
+    Toán tử -= : Loại bỏ 1 phương ở cuối (nếu phương thức đó có trong delegate, tính từ cuối) , ví dụ delegatevar -= method1
+- Func và Action: Func và Action là hai mẫu delegate định nghĩa sẵn, giúp bạn nhanh chóng tạo ra biến kiểu delegate mà không mất công khai báo
+1. Sủ dụng Func
+Func là mẫu delegate có kiểu trả về. Để khai báo biến delegate dùng cú pháp như sau:
+
+Func<kiểu_tham_số_1, kiểu_tham_số_2, ..., kiểu_trả_về> var_delegate(tên biến);
+***Kiểu cuối cùng trong khai báo Func là kiểu trả về của hàm, có thể thiếu tham số nhưng không được thiếu kiểu trả về
+
+-->Sử dụng Delegate làm tham số hàm: Có thể sử dụng delegate làm tham số của phương thức, nó có vai trò như những hàm callback linh hoạt
+
+2. Sử dụng Action:Action tương tự như Func, điều khác duy nhất là nó không có kiểu trả về.
+Action<kiểu_tham_số_1, kiểu_tham_số_2, ... > var_delegate;
+Nghĩa là biến kiểu Action có thể gán bằng các hàm có kiểu trả về void
+
+*****************Partial Type và Nested Type phân code thành nhiều file và lớp lồng nhau trong C# C Sharp**************
+
+1. Phân chia mã nguồn lớp (class, interface) ra thành nhiều file với Partial
+- Partial là kỹ thuật phân chia code lưu ở nhiều file mã nguồn khác nhau, khi biên dịch thì nó tổng hợp lại thành một. Kỹ thuật này dùng với từ khóa partial khi định nghĩa lớp, giao diện, struct.
+
+2. Lớp lồng nhau (kiểu Nested) trong C#
+- Trong C# nó cho phép bạn khai báo một lớp (class), giao diện (interface), cấu trúc (struct) trong thân một lớp khác - chúng được gọi là kiểu lồng nhau (Nested Type)
+*Ví dụ khai báo một lớp con trong một lớp khác
+
+public class Container
+{
+    public class Nested
+    {
+        public Nested() { }
+    }
+}
+
+Lớp Nested được khai báo, định nghĩa trong lớp Container, nếu phạm vị lớp public, thì bên ngoài sử dụng lớp con này bằng cách chỉ rõ Container.Nested
+
+Container.Nested nested = new Container.Nested();
+
+
+**************Kiểu vô danh và kiểu động dynamic trong C#***********************
+1.Kiểu vô danh C#
+- Kiểu vô danh (Anonymous Type) - là kiểu không có tên. C# cho phép bạn tạo ra các đối tượng kiểu vô danh bằng từ khóa new, cú pháp cơ bản để tạo ra đối tượng có kiểu vô danh như sau:
+var obj = new {
+    thuoctinh1 = giatri1,
+    thuoctinh2 = giatri2
+}
+
+-Bằng cú pháp như vậy, tạo ra được đối tượng chứa các thuộc tính (chú ý - thuộc tính là chỉ đọc), bạn tạo ra đối tượng mà không cần phải khai báo lớp
+- Để truy cập thuộc tính của toán tử vẫn dùng ký hiệu . và tên thuộc tính.
+
+Console.WriteLine(myProfile.name);
+- Kiểu vô danh Anonymous Type - được dùng phổ biến trong LINQ
+- Khi có đối tượng kiểu vô danh, nếu dùng nó truyền như tham số cho các phương thức - coi nó như các object có thể gây lỗi khi buil ứng dụng - trình biên dịch kiểm tra và báo lỗi. Để giải quyết vấn đề này có thể dùng đến khai báo kiểu dynamic
+
+2. Kiểu động - dynamic
+
+- Biến kiểu động - ngầm định - khai báo với từ khóa dynamic, thì kiểu thực sự của biến đó được xác định bằng đối tượng gán vào ở thời điểm chạy (khác với kiểu ngầm định var kiểu xác định ngay thời điểm biên dịch)
+ex: dynamic myvar;
+- Có thể dùng kiểu động này với kiểu dữ liệu bất kỳ
+ex:
+dynamic d1 = 7;
+dynamic d2 = "a string";
+dynamic d3 = System.DateTime.Today;
+dynamic d4 = System.Diagnostics.Process.GetProcesses();
+
+***************Biểu thức lambda trong C# sử dụng lambda với delegate****************
+1. Khai báo lamda trong C#
+- Biểu thức lambda còn gọi là biểu thức hàm nặc danh (Anonymous), một biểu thức khai báo giống phương thức (hàm) nhưng thiếu tên. Cú pháp để khai báo biểu thức lambda là sử dụng toán dử => như sau:
+(các_tham_số) => biểu_thức;
+- Thậm chí là cả một cấu trúc lệnh sau toán tử =>
+
+(các_tham_số) =>
+{
+   // các câu lệnh
+    // Sử dụng return nếu có giá trị trả về
+}
+- Các biểu thức lambda đều có thể chuyển đổi thành delegate, do vậy nó có thể gán cho các delegate phù hợp
+
+** Sử dụng lambda C#
+Ví dụ, đây là một biểu thức lambda, nó tính tổng của hai số nguyên
+
+(int x, int y) => {
+    return x + y;
+};
+
+Có thể gán biểu thức này cho biến delegate. Ví dụ:
+
+namespace CS09_Anonymous_lambda {
+    class Program {
+        public delegate int TinhToan (int a, int b);
+        static void Main (string[] args) {
+
+            // Gán biểu thức lambda cho delegate
+            TinhToan tinhtong = (int x, int y) => {
+                return x + y;
+            };
+
+            int kq = tinhtong (5, 1); // kq = 6;
+            Console.WriteLine(kq);
+        }
+    }
+}
+
+**Như phần trình bày về Delegate, có thể gán biểu thức lambda có kết quả trả về cho Func hoặc biểu thức không có kết quả trả về cho Action
+namespace CS09_Anonymous_lambda {
+    class Program {
+        public delegate int TinhToan (int a, int b);
+        static void Main (string[] args) {
+
+            //Gán lambda cho Func
+            Func<int, int, int> tinhtong1 = (int x, int y) => {
+                return x + y;
+            };
+            // Gán lambda cho Action
+            Action<int> thongbao = (int vl) => {
+                Console.WriteLine (vl);
+            };
+
+            int kq1 = tinhtong1 (5, 3); // kq1 = 8
+            int kq2 = tinhtong1 (5, 5); // kq2 = 10
+            thongbao (kq1); // In ra: 8
+            thongbao (kq2); // In ra: 10
+        }
+    }
+}
+
+** Định nghĩa phương thức với lambdada
+- Bạn có thể sử dụng toán tử => sau khai báo tên phương thức (loại phương thức có kiểu trả về khác void) của lớp, rồi đến ngay một biểu thức có kết quả trả về (không dùng {}), biểu thức này như là định nghĩ thân của phương thức.
+Ví dụ, khai báo phương thức:
+
+int Tong(int x, int y) => x + y;
+
+Nó tương đương với dạng đầy đủ đã biết
+
+int Tong(int x, int y)
+{
+    return x + y;
+}
+
+
+***************Tính đa hình trong C#(override)*************
+- Lớp trừu tượng/ phương thức trừu tượng
+	+ Khi khai báo một lớp có từ khóa abstract thì nó là lớp trừu tượng. 
+	+ Đã là lớp trừu tượng thì nó không được dùng để khởi tạo đối tượng trực tiếp mà nó chỉ làm lớp cơ sở kế thừa bởi lớp khác.
+	+ Trong lớp trừu tượng, còn có thể khai báo phương thức trừu tượng với từ khóa abstract, phương thức này không có thân (chỉ có tên - tham số), nó yêu cầu lớp kế thừa bắt buộc phải nạp chồng (override)
+	+ Lớp trừu tượng có thể có phương thức trừu tượng và cả phương thức bình thường
+	+ Một lớp trừu tượng ko dùng dể tạo ra đối tượng mà chỉ dùng dể ké thừa, còn hàm abstract bắt buộc phải ovverride
+	abstract class Product(){}
+	ex: Product p = new Product(); // lỗi vì sử dụng abstract tạo đối tượng
+
+- interface
+	+ Chỉ có điều khai báo thì dùng từ khóa interface thay cho từ khóa class và điều quan trọng - tất cả các phương thức đều khai báo không có thân (chỉ có tên - nghĩa là phương thức abstract).. 
+	+ Lớp triển khai giao diện (lớp kế thừa) bắt buộc phải định nghĩa lại (không cần từ khóa overrid) tất cả các phương thức này, 
+	+ *******Lớp kế thừa có thể kế thừa nhiều giao diện.
+
+- phương thức ảo
+Một phương thức ảo trong lớp - là phương thức có thể định nghĩa lại (bị nạp chồng - bị đè) bởi lớp kế thừa. Muốn một phương thức là ảo, thêm từ khóa virtual vào khai báo tên hàm.
+
+ex: 
+class Product {
+    protected double price = 0;
+
+    // Phương thức ảo ProductInfo
+    public virtual void ProductInfo() {
+        Console.WriteLine($"Giá sản phẩm {price}");
+    }
+
+    public void TestProduct()
+    {
+        this.ProductInfo();
+    }
+}
+
+- Nạp chống phương thức
+Ở lớp kế thừa, có thể định nghĩa lại phương thức ảo của lớp cơ sở, việc này là thực hiện nạp chồng, để nạp chồng chỉ việc khai báo lại phương thức thêm vào từ khóa override
+
+ex :
+ class Iphone : Product {
+    public Iphone() {
+        price = 500;
+    }
+    public override void ProductInfo() {
+        Console.WriteLine($"Điện thoại Iphone");
+        base.ProductInfo();
+    }
+}
+
+**Tuy nhiên, nếu muốn thi hành code của hàm mà do lớp cơ sở định nghĩa thì bạn cần gọi đến nó thông qua ký hiệu base.
+
+************************struct and enum (kiểu kiệt kê)*******************
+
+- Struct (lưu giá trị của biến, có vai trò như một biến)
+struct kiểu dữ liệu cấu trúc (còn gọi là structure) - kiểu dữ liệu này tạo thành khi ta muốn gộp các dữ liệu có liên quan thành một nhóm (đóng gói dữ liệu). 
+Để tạo ra kiểu dữ liệu cấu trúc dùng đến từ khóa struct với khai báo khá giống khai báo lớp, tuy nhiên struct là thuộc nhóm kiểu giá trị C# chứ không phải kiểu tham chiếu C# (Do đó, truyền tham số dùng struct là tham trị: xem thêm tham chiếu, tham trị C# ). Trong struct có thể chứa: trường dữ liệu, thuộc tính, phương thức khởi tạo, hằng số, các phương thức, toán tử, sự kiện. 
+
+ex:
+public struct Product {
+
+    public string name;   // trường tên sản phẩm
+    public decimal price; // trường giá sản phẩm
+
+    // Phương thức sinh ra chuỗi thông tin
+    public override string ToString() => $"{name} : {price}$";
+
+}
+
+Product  productA;
+productA.name = "Iphone";
+productA.price = 1000;
+
+Product productB = productA; // gán struct, là sao chép giá trị chứ không tham chiếu như lớp (product B có name = Iphone, price = 1000)
+productB.name = "Laptop";(product B có name = Laptop, price = 1000)
+
+Console.WriteLine(productA.ToString());
+Console.WriteLine(productB.ToString());
+// In ra:
+// Iphone : 1000$
+// Laptop : 1000$
+
+Phương thức khởi tạo struct:
+
+Trong struct cũng có thể có phương thức khởi tạo như lớp, nó dùng để khởi tạo giá trị các trường hoặc thuộc tính. 
+Khi có phương thức khởi tạo (hàm tạo) muốn chạy nó thì phải dùng toán tử new để có bản thực thi của struct. 
+Một lưu ý nữa là phương thức khởi tạo bắt buộc phải khởi tạo toàn bộ thành viên dữ liệu (trường, thuộc tính) có trong struct
+ex:
+public struct Product {
+
+    public Product(string _name)
+    {
+      // trong cấu trúc có bao nhiêu trường dữ liệu, thuộc tính
+      // phải khởi tạo hết trong hàm tạo (thiếu sẽ lỗi)
+      name = _name;
+      price = 100;
+    }
+
+    public string name;   // trường tên sản phẩm
+    public decimal price; // trường giá sản phẩm
+
+    // Phương thức sinh ra chuỗi thông tin
+    public override string ToString() => $"{name} : {price}$";
+
+}
+
+Thi hành hàm tạo thì phải dùng tới new, như đoạn code:
+
+Product product = new Product("Samsung Abc");
+Console.WriteLine(product.ToString());
+// Samsung Abc : 100$
+
+Thuoccj tính trong struct:
+Trong struct cũng có thể khai báo các thuộc tính, chỉ cần lưu ý đã có thuộc tính thì bắt buộc phải khởi tạo nó một cách tường minh trong phương thức khởi tạo nếu không sẽ lỗi. 
+Ví dụ sau có hai thuộc tính là Name và Description
+ex:
+public struct Product {
+
+    public Product(string _name)
+    {
+      name = _name;  // đồng nghĩa khởi tạo thuộc tính Name
+      price = 100;
+      Description = "Mô tả về sản phẩm {name}";
+    }
+
+    public string name;   // trường tên sản phẩm
+    public decimal price; // trường giá sản phẩm
+
+    // Phương thức sinh ra chuỗi thông tin
+    public override string ToString() => $"{name} : {price}$";
+
+    // Thuộc tính Name
+    public string Name {set => name = value; get => name;}
+    // Thuộc tính Description
+    public string Description {set; get;}
+
+}
+
+***So sánh sự khác nhau giữa class và struct
+
+    Struct phù hợp khi muốn gom một lượng nhỏ các biến có kiểu nguyên thủy (int, float ...), thuộc tính lại với nhau. Class thì dùng khi các diễn tả đối tượng chứa các biến, thuộc tính và xử lý dữ liệu phức tạp.
+    Struct có thể dùng khai báo biến mà không cần thao tác tạo đối tượng. BIẾN KIỂU STRUCT LÀ THAM TRỊ CÒN BIẾN CLASS LÀ THAM CHIẾU . struct được lưu ở bộ nhớ stack, còn đối tượng được sinh ra bới class được lưu ở bộ nhớ heap - bộ nhớ heap được quản lý, giám sát, thu hồi tự động bởi GC.
+
+
+- Sử dụng kiểu liệt kê (Enumeration Type) - enum
+Kiểu liệt kê (enum) khai báo một tập hợp các hằng số có tên, mặc định giá trị các hằng số này là kiểu int và bắt đầu từ 0 trở đi trong khai báo kiểu liệt kê. Liệt kê (enum) thuộc dạng kiểu giá trị như struct. 
+Để khai báo một kiểu liệt kê thì dùng từ khóa enum
+
+Ví dụ - khai báo kiểu liệt kê thể hiện học lực của sinh viên gồm có: Kém (0), Trung bình (1), Khá (2), Giỏi (3)
+
+enum HocLuc {Kem, TrungBinh, Kha, Gioi};
+
+Mặc định enum sẽ thiết lập tên các khai báo sẽ nhận giá trị tương ứng từ 0, 1, 2 ... Tuy nhiên, bạn có thể gán một tên nào đó ứng với giá trị cụ thể, ví dụ TrungBinh nhận giá trị 5
+
+enum HocLuc {Kem, TrungBinh = 5, Kha, Gioi};
+
+Do TrungBinh bằng 5, nên tên tiếp theo Kha sẽ nhận 6, Giỏi là 7
+
+Để nhận giá trị liệt kê - bạn dùng toán tử . rồi đến tên phần tử.
+
+enum HocLuc {Kem, TrungBinh, Kha, Gioi}
+
+static void Main(string[] args)
+{
+    int a = (int)HocLuc.Kha;  // cast enum thành int
+    Console.WriteLine(a);     // 2
+}
+
+Khai báo kiểu enum rất phù hợp khi giá trị của biến nhận một giá trị hằng số trong tập hằng số hữu hạn nào đó, như danh sách các ngày trong tuần, trạng thái online / offline, và đặc biệt hay dùng Enum với câu lệnh switch
+
+static void test_enum () {
+
+    HocLuc hocluc = HocLuc.Kha; // khai báo biến hocluc kiểu enum và khởi tạo giá trị bằng HocLuc.Kha
+    switch (hocluc) {
+        case HocLuc.Kem:
+            Console.WriteLine ("Học lực kém");
+            break;
+        case HocLuc.Kha:
+            Console.WriteLine ("Học lực Kha");
+            break;
+        case HocLuc.Gioi:
+            Console.WriteLine ("Học lực Giỏi");
+            break;
+        default:
+            Console.WriteLine ("Học lực TB");
+            break;
+
+    }
+}
+
+Bạn có thể cast - chuyển kiểu qua lại giữa enum và int
+
+HocLuc hoc = (HocLuc)2;
+Console.WriteLine(hoc); //Kha
+
+Sử dụng enum, khi viết code tên của Enum nó đã gợi nhớ giá trị - ý nghĩa của dữ liệu nên code dễ đọc, dễ hiểu hơn
+
+HocLuc hocluc_hocsinhA = HocLuc.Kha;
+int    hocluc_hocsinhB = 2;
+
+Hai dòng code trên, về logic có thể hoàn toàn giống nhau. Nhưng đọc code ở dòng 1 sẽ dễ hơn đọc ở dòng 2 nhiều.
+***********************************************************************************
+*******Phân chia mã nguồn lớp (class, interface) ra thành nhiều file với Partial*************
+*******Lớp lồng nhau (kiểu Nested) trong C#***********************
+
+- Kiểu vô danh (Anonymous Type) và kiểu động dynamic trong C# C Sharp:
+++ Kiểu vô danh (Anonymous Type) - là kiểu không có tên. C# cho phép bạn tạo ra các đối tượng kiểu vô danh bằng từ khóa new, cú pháp cơ bản để tạo ra đối tượng có kiểu vô danh như sau:
+
+var obj = new {
+    thuoctinh1 = giatri1,
+    thuoctinh2 = giatri2
+}
+
+Để truy cập thuộc tính của toán tử vẫn dùng ký hiệu . và tên thuộc tính.
+
+Console.WriteLine(myProfile.name);
+The var keyword allows you to declare a local variable (inside a method or a loop) without explicitly stating the type - instead, 
+the C# compiler infers the type from the right part of the declaration. 
+This can be really convenient in a lot of situations, but it might also make your code slightly less readable. 
+you can use it, or stick to explicitly declaring the variable types - whatever you prefer, but you need it for anonymous types, as already explained.
+******************************
+Biến kiểu động - ngầm định - khai báo với từ khóa dynamic, thì kiểu thực sự của biến đó được xác định bằng đối tượng gán vào ở thời điểm chạy (khác với kiểu ngầm định var kiểu xác định ngay thời điểm biên dịch)
+ex:
+dynamic myvar;
+
+Ví dụ khai báo phương thức có sử dụng tham số kiểu dynamic:
+
+static void TestFunc(dynamic dvar) {
+    Console.WriteLine(dvar.age); // ở thời điểm biên dịch - không biết dvar có thuộc tính age hay không, nhưng nó vẫn biên dịch
+}
+
+Với phương thức trên, ở thời điểm chạy mà đối tượng ở tham số có thuộc tính age thì sẽ không lỗi, còn nếu không có thuộc tính age sẽ sinh ngoại lệ.
+
+
+
+***************Biểu thức lambda trong C# sử dụng lambda với delegate**********
+
+Biểu thức lambda còn gọi là biểu thức hàm nặc danh (Anonymous), một biểu thức khai báo giống phương thức (hàm) nhưng thiếu tên. Cú pháp để khai báo biểu thức lambda là sử dụng toán dử => như sau:
+
+(các_tham_số) => biểu_thức;
+
+Thậm chí là cả một cấu trúc lệnh sau toán tử =>
+
+(các_tham_số) =>
+{
+   // các câu lệnh
+    // Sử dụng return nếu có giá trị trả về
+}
+
+Các biểu thức lambda đều có thể chuyển đổi thành delegate, do vậy nó có thể gán cho các delegate phù hợp
+
+Định nghĩa phương thức với lambda
+
+Bạn có thể sử dụng toán tử => sau khai báo tên phương thức (loại phương thức có kiểu trả về khác void) của lớp, rồi đến ngay một biểu thức có kết quả trả về (không dùng {}), biểu thức này như là định nghĩ thân của phương thức.
+
+Ví dụ, khai báo phương thức:
+
+int Tong(int x, int y) => x + y;
+
+Nó tương đương với dạng đầy đủ đã biết
+
+int Tong(int x, int y)
+{
+    return x + y;
+}
+
+
+*****************FILE*************
+Combine :	Kết hợp các chuỗi thành dường dẫn
+
+var path = Path.Combine("home", "ReadMe.txt"); //  "home/ReadMe.txt"
+
+
+*****Biến trong C#****************
+Những biển có kiểu sau thì nó là kiểu tham chiếu:
+
+    - Biến kiểu lớp (class), các lớp thư viện hoặc lớp do bạn định nghĩa
+    - Biến kiểu delegate
+    - Biến kiểu interface, các giao diện từ thư viện hoặc tự định nghĩa
+    - Biến kiểu dynamic
+    - Biến kiểu object
+    - Biến kiểu string
+	
+******(Networking) Sử dụng HttpClient trong C# tạo các truy vấn HTTP*******************
+1. Lớp HttpClient được sử dụng để gửi truy vấn HTTP và nhận phản hồi (response) từ các truy vấn đó. Lớp này thuộc namespace System.Net.Http, namespace này chứa các lớp giúp tạo ra sự liên lạc giữa client và server
+
+* Tạo truy vấn GET bất đồng bộ với HttpClient.
+- Để tạo ra truy vấn GET tới một địa chỉ URL, thực hiện phương thức GetAsync(url), đây là phương thức async khi kết thúc nó trả về đối tượng HttpResponseMessage từ đối tượng này ta sẽ biết kết quả truy vấn, và ta có thể đọc được dữ liệu tải về.
+
+***********Hàm hủy, quá tải toán tử, thành viên tĩnh, indexer***************
+1. Hàm hủy(Finalizer hoặc Destructor)==> Dùng phương thức hủy khi có nhu cầu dọn dẹp, giải phóng tài nguyên chiếm giữ
+    - Một lớp chỉ được khai báo một phương thức hủy (trong khi có thể có nhiều phương thức tạo)
+    - Bạn không thể gọi phương thức hủy một cách chủ động được (do hệ thống quản lý NET CORE tự quyết định thi hành nó khi nào)
+    - Khai báo phương thức hủy: tên trùng tên lớp, phía trước code ký hiệu ~, phương thức không được có tham số.
+ex:
+class MyClass {
+    ~MyClass()
+    {
+        // Thân phương thức hủy
+    }
+}
+
+    ** KHi nào hàm hủy được gọi, cơ chế dọn dẹp bộ nhớ với GC
+Trong .NET có dịch vụ hệ thống tên GC (garbage collector), nó là dịch vụ được chạy một cách tự động nhằm thu hồi bộ nhớ do .NET cấp phát trên HEAP không còn dùng đến quản lý bởi .NET. GC được thi hành tự động khi hệ thống thấy thiếu bộ nhớ - mặc dù bạn có thể yêu cấu .NET tiến hành thu hồi bộ nhớ không còn dùng đến ngày bằng cách gọi GC.Collect();
+Bộ nhớ trên HEAP là nơi lưu các đối tượng được tạo ra từ lớp (toán tử new), khi đối tượng đó không còn biến nào tham chiếu (trỏ) đến thì nó sẽ được đánh dấu thu hồi - và khi GC thu hồi - phương thức hủy sẽ được thi hành.
+
+2. Quá tải toán tử
+Quá tải toán tử trong C#
+
+Quá tải toán tử (Operator Overloading) trong C#, giúp bạn định nghĩa mới (hoặc định nghĩa lại) hoạt động của các toán tử trên những đối tượng lớp do bạn định nghĩa.
+
+Ví dụ, bạn có một lớp MyVector như sau:
+
+class MyVector {
+    double x;
+    double y;
+    public MyVector(double x, double y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+    public void ShowXY() {
+        Console.WriteLine("x = " + x);
+        Console.WriteLine("y = " + y);
+    }
+}
+
+Giờ bạn muốn có phép toán + trên những đối tượng sinh ra từ lớp này, ví dụ:
+
+MyVector v1 = new MyVector(2,3);
+MyVector v2 = new MyVector(3,4);
+
+MyVector v3 = v1 + v2;
+
+Nghĩa là v1 + v2 sẽ tạo ra một đối tượng mới
+
+Để định nghĩa toán tử +, nó định nghĩa giống phương thức thay tên bằng từ khóa operator và ký hiệu toán tử +, toán tử có kiểu trả về MyVector, hai toán hạng bên trái và bên phải đểu là đối tượng lớp MyVector nghĩa làm tham số trong định nghĩa là 2 đối tượng này.
+
+Cho thêm định nghĩa sau vào lớp MyVector
+
+public static MyVector operator+(MyVector a, MyVector b)
+{
+    double sx = a.x + b.x;
+    double sy = a.x + b.y;
+    MyVector v = new MyVector(sx,sy);
+    return v;
+}
+
+Giờ đã có thể sử dụng toán tử + chạy thử đoạn code
+
+MyVector v1 = new MyVector(2,3);
+MyVector v2 = new MyVector(3,4);
+
+MyVector v3 = v1 + v2;
+v3.ShowXY();
+
+Kết quả
+
+x = 5
+y = 6
+
+3. Thành viên tĩnh
+- Các thành viên trong lớp (phương thức, biến, thuộc tĩnh) khi khai báo có từ khóa static ở đầu thì nó là thành viên tĩnh. Thành viên tĩnh thì nó không thuộc về đối tượng cụ thể nào, có thể sử dùng mà không cần tạo đối tượng. Truy cập đến thành viễn tĩnh thông qua
+TÊN-LỚP.tên-thành-viên-tĩnh.
+- Đối với biến tĩnh thì dùng cho cho mọi đối tượng thuộc lớp, được khởi tạo một lần duy nhất. Nếu muốn khởi tạo thành viên tĩnh của lớp khi lần đầu truy cập có thể dùng phương thức khởi tạo tĩnh - xem thêm tại Static Constructor
+
+4. Thành viên biến chỉ đọc trong C#
+
+- Để khai báo một biến trở thành dạng chỉ đọc thì thêm vào đó Modify có tên là readonly. Ví dụ:
+public readonly string name;
+- Biến readonly có nghĩa là chỉ đọc, không sửa đổi được nữa. Tuy nhiên so với hằng số const thì có mấy điểm khác như sau:
+    + Hằng số thì phải khởi tạo ngay giá trị cho nó khi khởi tạo, biến readonly thì không khởi tạo ngay cũng được
+    + Biến readonly có thể gán giá trị cho nó trong hàm khởi tạo (và giá trị gán theo kết quả của một biểu thức nào đó)
+	
+5. Lớp tĩnh static class static trong C#
+Khi khai báo lớp, bạn có thể khai báo nó là lớp tĩnh bằng cách thêm Modify static trước tên lớp. Ví dụ:
+ex:
+public static class MyStaticClass {
+    // ... các thành viên tĩnh
+}
+**Khi MyStaticClass khai bão là lớp tĩnh như trên, thì các thành viên khai báo trong lớp đều phải khai báo là thành viên tĩnh. Thường dùng lớp tĩnh đề gom các hàm tiện ích lại với nhau
+
+6. Bộ đánh chỉ mục indexer trong C#
+- Indexer là khả năng cho cho phép truy cập đến các thành viên của lớp, thực hiện một số tác vụ thông qua ký hiệu chỉ mục [chỉ-mục] (ký hiệu chỉ mục được dùng để truy cập các phần tử mảng )
+- Để khai báo một bộ chỉ mục, khai báo gần giống như cú pháp khai báo thuộc tính lớp, setter/getter , cú pháp cơ bản như sau:
+
+public kiểu_trả_về this[kiểu_index index]
+{
+    get {
+        // thực hiện các tác vụ và trả về dữ liệu có kiểu_trả_về
+     }
+    set {
+        // giá trị được truyền trong biến value, có thể lưu nó vào nơi thích hợp
+     }
+}
+
+ex: 
+class IndexerExam {
+    string ho = "Nguyễn";
+    string ten = "Nam";
+
+    // Bộ chỉ mục số nguyên, chỉ mục là 0 hoặc 1 nếu khác sẽ phát sinh Exception
+    public string this[int index]
+    {
+        // Đọc dữ liệu theo chỉ mục
+        get {
+            if (index == 0) return ho;
+            else if (index == 1) return ten;
+            else throw new Exception("Chỉ số không tồn tại");
+         }
+
+         // Gán dữ liệu theo chỉ mục
+        set {
+            if (index == 0)  ho = value;
+            else if (index == 1) ten = value;
+            else throw new Exception("Chỉ số không tồn tại");
+        }
+    }
+
+}
+
+Giờ thì đối tượng lớp IndexerExam truy cập được bằng ký hiệu [], ví dụ:
+IndexerExam obj = new IndexerExam();
+
+Console.WriteLine(obj[0] + " " + obj[1]);      // đọc obj.ho và obj.ten
+obj[0] = "Đinh";                               // gán obj.ho
+obj[1] = "Quang Hưng";                         // gán obj.name
+Console.WriteLine(obj[0] + " " + obj[1]);      // đọc obj.ho và obj.ten
+
+// Kết quả chạy:
+// Nguyễn Nam
+// Đinh Quang Hưng
+
+****************************Mảng********************************
+C1: Khai báo:
+int[] bienmang;
+Khởi tạo:
+bienmang = new int[5];
+
+C2: Cos theer khowir taoj ngay khi khai bao:
+string[] studentNames = new string[10];
+
+- Khi khởi tạo - nó tạo ra mảng có số phần tử chỉ định, các phần tử của mảng có giá trị khởi tạo mặc định tùy vào kiểu dữ liệu sau đó bạn có thể cần gán giá trị lưu trữ trong các phần tử (nói ngay sau đây). C# hỗ trợ ngay khi khởi tạo mảng ta gán luôn các giá trị cụ thể vào mảng bằng cách mở ra ký hiệu {} trong nó liệt kê các giá trị lưu trữ của mảng.
+// mảng 3 phần tử chuỗi ký tự, mỗi phần tử được gán ngay giá trị chuỗi cụ thể
+string[] productNames = new string[3] {"Iphone", "Samsung", "Nokia"};
+// mảng 3 phần tử double, mỗi phần tử được gán giá trị luôn
+double[] productPrices = new double[3] {100, 200.5, 10.1};
+
+- Khi mảng được báo và khởi tạo luôn như vậy, không nhất thiết chỉ ra số lương phần tử ở [], vì số lượng phần tử sẽ lấy theo số giá trị khởi tạo trong {}, viết như sau là tương đương phần trên
+string[] productNames = new string[] {"Iphone", "Samsung", "Nokia"};
+double[] productPrices = new double[] {100, 200.5, 10.1};
+
+-Cách này thậm chỉ còn bỏ luôn cả toán tử new thì nó cũng ngầm định sử dụng khởi tạo như trên
+string[] productNames = {"Iphone", "Samsung", "Nokia"};
+double[] productPrices = {100, 200.5, 10.1};
+
+
+**************************Chuooix kis tuwj String trong C#*****************************
+\r : kí tự về dầu dòng
+Chuỗi nhập vào viết trong cặp nháy kép "", chèn vào chuỗi các ký tự đặc biệt ta dùng ký hiệu \: ví dụ \\ là ký tự \, \" là ký tự ", \n là ký tự xuống dòng, \r là ký tự về đầu dòng ... 
+
+** Viết chuỗi nguyên bản với kí hiệu @ trong C#
+- khi viết chuỗi trong dấu nháy kép "", thì các kí tự đặc biệt được xử lí với kí hiệu \ .example
+	string s = "C:\\Abc\\xyz";
+	// Nếu viết string s = "C:\Abc\xyz"; sẽ lỗi
+	Thì nội dung thực tế của chuỗi là C:\Abc\xyz
+- Nếu muốn viết chuỗi cố định, nội dung nguyên bản - cho biết sẽ không dùng \ để xử lý ký tự đặc biệt, thì thêm @ vào đầu chuỗi:
+string s = @"Ký tự \ được dùng để chèn ký tự đặc biệt như \n, \r";
+- Bằng ký hiệu @ chuỗi viết thế nào thì nội dung thực tế sẽ như vậy, ngoại trừ hai ký tự "" chuyển thành một ký tự ""
+string s = "Anh ấy nói, ""Đây là C#"""; //~ Anh ấy nói "Đây là C#"
+- Ngoài ra bạn có thể viết chuỗi trên nhiều dòng với ký hiệu @
+string s = @"Xin chào các bạn
+             Tôi đang học C#";
+- Chèn thêm biểu thức vào chuỗi với kí hiệu $ trong C#
+Khi viết chuỗi có ký tự $ phía trước, thì trong chuỗi đó có thể chèn các biểu thức vào chỗ có cặp {} : {biểu-thức}
+int a = 10;
+int b = 2;
+string s = $"Kết quả {a}/{b} là {a/b}";  // "Kết quả 10/2 là 5"
+
+- Một số phương thức làm việc với chuỗi C#:
+
+ex: 
+string stringA =  "Xin chào,";
+string stringB = "các bạn!";
+
+****Concat 	: phương thức tĩnh, nối các chuỗi liệt kê ở tham số lại với nhau
+string s = String.Concat(stringA, stringB);    // s = "Xin chào,các bạn!"
+
+****Format 	Convert các đối tượng thành chuỗi và chèn chúng vào chuỗi định dạng được chỉ ra, cú pháp cơ bản
+
+String.Format(stringFormat, arg0, arg1 ...)
+
+Trong đó stringFormat là chuỗi định dạng, chứa mẫu và và vị trí mà arg0, arg1 ... sẽ chèn vào.
+
+string s = String.Format("Chào {0}, {0} ơi, hôm nay ngày {1} rồi!", "Nam", DateTime.Now.Day);
+// s = "Chào Nam, Nam hôm nay ngày 20 rồi!"
+
+Nhìn vào, chuỗi định dạng chỗ nào có {0} sẽ được chèn bởi arg0("Nam"), chỗ nào có {1} sẽ được chèn bởi arg1 (20)
+
+Tại các vị trí cần chèn {} có thể định dạng dữ liệu chèn vào, chi tiết xem tại Formatting
+
+*****IndexOf 	Tìm vị trí (đầu tiên) của ký tự hoặc chuỗi ký tự trong chuỗi
+
+*****LastIndexOf 	Tìm vị trí (cuối) của ký tự hoặc chuỗi ký tự trong chuỗi
+
+*****Insert 	Tạo chuỗi = chèn chuỗi này vào trong chuỗi khác, vị trí chèn cần chỉ ra
+
+var s = stringA.Insert(8, " tất cả"); // "Xin chào tất cả,"
+
+*****PadLeft 	Tạo chuỗi mới từ chuỗi cũ, độ dài chuỗi mới chỉ ra - nếu độ dài chuỗi mới lớn hơn chuỗi cũ thì các ký tự phía đầu được chèn khoảng trắng hoặc ký tự chỉ định.
+
+string s1 = "Abc";
+string s2 = s1.PadLeft(6);        //  "   Abc"
+string s3 = s1.PadLeft(6, '*');   //  "***Abc"
+
+*****PadRight 	Tương tự PadLeft nhưng chèn khoảng trắng bên phải
+
+*****Replace 	Tìm và thay thế trong chuỗi
+
+var s = stringA.Replace("chào", "CHÀO");   // "Xin CHÀO,"
+
+*****Split 	Trả về mảng các chuỗi con được chia từ chuỗi gốc bởi ký tự chia chỉ định, chuỗi chia chỉ định
+
+var s = "Nguyễn Văn A".Split(' '); // s tương đương mảng {"Nguyễn","Văn", "A"}
+
+*****ToLower 	Sinh chuỗi mới bằng cách chuyển các ký tự thành chữ thường
+
+*****ToUpper 	Sinh chuỗi mới bằng cách chuyển các ký tự thành chữ in
+
+*****Trim 	Sinh chuỗi mới bằng cách loại bỏ khoảng trắng (hoặc chỉ định) ở đầu và cuối
+
+*****Substring 	Lấy ra chuỗi con từ chuỗi chính - chuỗi con lấy từ vị trí chỉ ra đến cuối hoặc theo độ dài
+
+string s = stringA.Substring(4); // s = "chào,"
+string x = stringA.Substring(0, 3); // s = "Xin" (dài 3)
+
+*******************Sử dụng StringBuilder***********************
+-  Mỗi khi khởi tạo một biến kiểu string, bạn đã cấp phát một lượng bộ nhớ để lưu trữ chuỗi - thường thì bộ nhớ này nhiều hơn những gì bạn cần.
+==> Để thi hành tối ưu hơn về tốc độ, về sử dụng bộ nhớ có thể dùng tới đối tượng StringBuilder 
+
+ex:
+StringBuilder stringBuilder = new StringBuilder();
+stringBuilder.Append("Xin chào các bạn - xuanthulab.net");
+stringBuilder.Replace("Xin chào", "XIN CHÀO");
+Console.WriteLine(stringBuilder); // Out: XIN CHÀO các bạn - xuanthulab.net
+
+- Một số phương thức khi sử dụng StringBuilder:
+method 			Sử dụng
+Append 			Nối một đối tượng (chuỗi, số ...) vào StringBuilder
+AppendFormat 	Nối vào một chuỗi sinh ra theo StringFormat
+Insert 			Chèn vào StringBuilder một chuỗi ở vị trí chỉ ra
+Remove 			Loại bỏ một lượng ký tự, bắt đầu từ vị trí do chỉ định
+Replace 		Tìm và thay thế
+ToString 		Trả về chuỗi (String)
+
+*******Dùng biểu thức chính quy(Regular expression) với chuỗi trong C#*************
+- Biểu thức chính quy là một nhóm các ký tự, ký hiệu nó được sử dụng để tìm kiếm văn bản (text).
+Một biểu thức chính quy là một mẫu nó tương đồng quy luật với một chuối từ trái qua phải. Biểu thức chính quy tên tiếng anh là Regular Expression gọi tắt là regex hoặc regexp
+
+ex:  ^[a-z0-9_-]{3,15}$
+^ Ký hiệu cho biết bắt đầu một dòng
+[a-z0-9_-] Cho phép tên chứa ký tự a-z, số từ 0 - 9, ký tự -, ký tự _
+{3,15} Tên dài 3 đến 15 ký tự
+$ Điểm kết thúc dòng
+
+- Biểu thức RegExp cơ bản:
+Một biểu thức Regex chỉ là một mẫu các ký tự dùng để tìm kiếm trong text (chuỗi)
+Biểu thức chính quy Regex là phân biệt chữ hoa chữ thường. Có cơ chế bật cờ thiết lập không phân biệt chữ hoa, chữ thường ở phần dưới
+ - Cac kí tự bieur diễn - Meta:
+ 
+Ký tự Meta 				Mô tả
+. 						Biểu diễn bất kỳ ký tự nào ngoài trừ ký tự xuống dòng
+[ ] 					Tập hợp ký tự. Phù hợp nếu có bất kỳ ký tự nào trong dấu []
+[^ ] 					Tập hợp ký tự phủ định. Phù hợp nếu không có ký tự nào trong []
+* 						Lặp lại 0 đến nhiều lần.
++ 						Lặp lại 1 hoặc nhiều lần
+? 						Tùy chọn có hay không cho mẫu phía trước
+{n,m} 					Độ dài tối thiểu là n tối đa là m
+(xyz) 					Biểu diễn một nhóm.
+| 						Biểu diễn thay thế, phép toán or
+\ 						Biểu diễn ký tự đặc biệt [ ] ( ) { } . * + ? ^ $ \ |
+^ 						Điểm bắt đầu của dòng.
+$ 						Điểm kết thúc của dòng
+ 
+- kí hiệu chấm (.)
+Ký hiệu dấu chấm . là một meta đơn giản, nó biểu diễn bất kỳ ký tự nào ngoài trừ ký tự return \r hoặc newline \n. Ví dụ biểu thức .oàn thì có nghĩa là: một ký tự nào đó, tiếp theo đến ký tự o, tiếp theo đến à cuối cùng là n. Ví dụ dùng mẫu đó tìm trong chuỗi. 
+- tập hợp kí tự []
+Dùng [] để chứa tập hợp các ký tự. Có thể dùng dấu - để biểu diễn một dải các ký tự theo vị trí trong bảng chữ cái như a-z, 0-9 ..., biểu thức so sánh sẽ hợp mẫu nếu chứa bất kỳ ký tự nào trong đó (không cần quan tâm thứ tự) 
+
+ex:
+Ví dụ biểu thức [ưƯ]ớc có nghĩa là: Có một chữ ư hoặc Ư, theo sau bởi ớ, tiếp theo là c
+[ưƯ]ớc => Ước một điều ... mộng ước rất đơn sơ. Nụ hôn trao hạnh phút đến bất ngờ
+- Nếu [] chứa . thì nó biểu diễn ký tự . chứ không con ý nghĩa đại diện như trường hợp trên.
+ex: nh[.] => Thời gian cứ thế xoay vòng thật nhanh. Bao mùa chiếc áo phông phanh!
+
+- Tập hợp ngoại trừ [^]
+Thông thường thì ^ biểu diễn điểm bắt đầu của chuỗi, tuy nhiên nếu nó nằm ở vị trí sau dấu [ của cặp [] thì nó lại mang ý nghĩa tạo ra tập hợp ký tự loại trừ (phụ định). Ví dụ biểu thức [^n]hanh có nghĩa là bất kỳ ký tự nào ngoại trừ ký tự n, theo sau bởi h, tiếp theo bởi a, n và h
+[^n]hanh => Thời gian cứ thế xoay vòng thật nhanh. Bao mùa chiếc áo phông phanh!==> phanh
+
+- Lặp lại với kí tự lặp *
+
+/////////
+- Using:  được dùng khi một chức năng nào đó k có sự quản lí của GC(Garbage Collector: quá trìn tự động thực thi nhiệm vụ quản lí bộ nhớ) thì nó sẽ giúp chúng ta quản lí bộ nhớ khi không còn dùng chức năng đó nữa.
+- Lấy thông tin encoding của Text file
+	+ Khi đọc các file text (không phải file nhị phân), đầu tiên cần xác định encoding của nó (UTF8, Unicode, UTF32 ...). 
+	+  5 byte đầu tiên (BOM) xác định được encoding. 
+- STREAM:
+	+ Một luồng (stream) là một đối tượng được sử dụng để truyền dữ liệu. 
+	Khi dữ liệu truyền từ các nguồn bên ngoài vào ứng dụng ta gọi đó là đọc stream, và khi dữ liệu truyền từ chương trình ra nguồn bên ngoài ta gọi nó là ghi stream. 
+	+ Với ASCII, 7 bit biểu diễn các ký tự - nó đủ biểu diễn bảng chữ cái tiếng Anh (in hoa, thường, số ký tự đặc biệt) - ASCII 1 byte biểu diễn 1 ký tự. UTF-16 thì dùng 2 byte biểu diễn 1 ký tự. 
+	UTF-32 dùng 4 byte biểu diễn 1 ký tự. Với UTF-8(bit) (dùng nhiều ngày nay) - nó dùng biến để xác định bao nhiêu byte cho mỗi ký tự cụ thể, Mỗi ký tự có thể từ 1 - 6 byte trong booj kis tuwj Unicode
+	+ Unicode gán cho mỗi ký tự một số duy nhất hoặc điểm mã.
+///////////////////////
+- Stack : ngăn xếp (LIFO): Các thao tác với ngăn xếp :
+	Push: Thêm một phần tử vào đỉnh của ngăn xếp, số phần tử của ngăn xếp tăng lên 1.
+    Pop: Xóa bỏ phần tử đầu tiên ở đỉnh của ngăn xếp, số phần tử của ngăn xếp giảm đi 1.
+    Top: Lấy giá trị của phần tử đầu tiên ở đỉnh của ngăn xếp, số phần tử của ngăn xếp không thay đổi.
+    IsEmpty: Kiểm tra ngăn xếp trống hay không. Ngăn xếp trống là ngăn xếp không có phần tử nào.
+    IsFull: Kiểm tra ngăn xếp đã đầy hay chưa. Thao tác này không phải lúc nào cũng có.
+    Size: Lấy số lượng phần tử stack đang có.
+- Queue : hàng đợi (FIFO)
+	+ Cấu trúc một hàng đợi:
+	
+    EnQueue: Thêm phần tử vào cuối(rear) của Queue.
+    DeQueue: Xóa phần tử khỏi đầu(front) của Queue. Nếu Queue rỗng thì thông báo lỗi.
+    IsEmpty: Kiểm tra Queue rỗng.
+    Front: Lấy giá trị của phần tử ở đầu(front) của Queue. Lấy giá trị không làm thay đổi Queue.
+	+ Cài đặt hàng đợi bằng mảng:
+	Để cài dặt queue, chúng ta cần sử dụng những biến như sau:
+	
+    queue[]: Một mảng một chiều mô phỏng cho hàng đợi
+    arraySize: Số lượng phần tử tối đa có thể lưu trữ trong queue[]
+    front: Chỉ số của phần tử ở đang đầu queue. Nó sẽ là chỉ số của phần tử sẽ bị xóa ở lần tiếp theo
+    rear: Chỉ số của phần tử tiếp theo sẽ được thêm vào cuối của queue
+	
+	+ Các biến thể của hàng đợi 
+    Double-ended queue(Hàng đợi 2 đầu):  dữ liệu có thể thêm hoặc xóa ở cả đầu(front) và cuối(rear) của hàng đợi.
+    Circular queue(Hàng đợi vòng): Trong hàng đợi tiêu chuẩn, khi một phần tử bị xóa khỏi hàng đợi, các vị trí bị xóa đó sẽ không được tái sử dụng. Hàng đợi vòng sinh ra để khắc phục sự lãng phí này.
+	
+///////////////////
+Chuỗi  kí tự C#
+- Viết chuỗi nguyên bảng với kí hiệu @ trong C#
+string s = "C:\\Abc\\xyz";==> Thì nội dung thực tế của chuỗi là C:\Abc\xyz
+Nếu muốn viết chuỗi cố định, nội dung nguyên bản - cho biết sẽ không dùng \ để xử lý ký tự đặc biệt, thì thêm @ vào đầu chuỗi:
+Bằng ký hiệu @ chuỗi viết thế nào thì nội dung thực tế sẽ như vậy, ngoại trừ hai ký tự "" chuyển thành một ký tự ""
+- Một số phương thức xử lí chuỗi trong C#
+	+ Concat: nối các chuỗi liệt kê ở tham số lại với nhau 
+	ex: string s = String.Concat(stringA, stringB); 
+	+ Format: Convert các đối tượng thành chuỗi và chèn chúng vào chuỗi định dạng được chỉ ra
+	ex: String.Format(stringFormat, arg0, arg1 ...)
+	+ Trim: Sinh chuỗi mới bằng cách loại bỏ khoảng trắng (hoặc chỉ định) ở đầu và cuối
+	+ Split: Trả về mảng các chuỗi con được chia từ chuỗi gốc bởi ký tự chia chỉ định, chuỗi chia chỉ định
+	var s = "Nguyễn Văn A".Split(' '); // s tương đương mảng {"Nguyễn","Văn", "A"}
+	+ PadLeft: Tạo chuỗi mới từ chuỗi cũ, độ dài chuỗi mới chỉ ra - nếu độ dài chuỗi mới lớn hơn chuỗi cũ thì các ký tự phía đầu được chèn khoảng trắng hoặc ký tự chỉ định. 
+	ex: 
+	string s1 = "Abc";
+	string s2 = s1.PadLeft(6);        //  "   Abc"
+	string s3 = s1.PadLeft(6, '*');   //  "***Abc"
+
+
+

@@ -1,0 +1,42 @@
+1. tạo 1 thư mục mới
+  mkdir folder
+ 
+- Trong trường hợp nếu muốn tạo một thư mục chứa nhiều thư mục con, bạn có thể sử dụng tùy chọn "-p". 
+Giả sử, bạn có thư mục foo và có quyền truy cập vào nó:
+mkdir -p /foo/bar/baz
+Lệnh trên sẽ tạo thư mục bar, thư mục baz nằm trong bar; bar và baz nằm trong /foo đã có.
+
+2. Đọc một số File
+   cat File
+   
+3. Sao chép hoặc di chuyển file
+
+- Sao chép File 
+   cp file1 file2
+- Sao chép thư mục  
+   cp -r: sẽ sao chép nội dung của một thư mục nhất định (và các thư mục con) sang thư mục bạn lựa chọn
+   -Ngoài ra bạn có thể sử dụng cp với đường dẫn đầy đủ:
+   cp -r /home/marin/work/ /home/marin/backup : Câu lệnh trên sẽ sao chép nội dung của thư mục "work" sang thư mục mới có tên "backup".
+  
+4. Xóa File và thư mục
+    rm filename
+
+5. Liệt kê nội dung thư mục: 
+- Liệt kê danh sách thư mục: ls
+- ls -l:  hiển thị danh sách thông tin chi tiết từng file và thư mục
+- ls -a: tất cả các file và thư mục,chứa thêm thư mục ẩn
+
+6. Tìm kiếm lệnh Linux trước đó.
+Up or history
+
+7.If you want to make all the files in the current directory have all permissions type:
+
+chmod -R 777 ./
+//////////////////////////////////////CMD////////////////////////////////////
+8. del /q *.*
+- /q : delete mà k cần hỏi lại
+- *.*: delete all file in current folder.
+
+9. rmdir MAKE /s /q
+- /q : delete mà k cần hỏi lại
+- /s : Use /s option to delete the folder contents along with the folder. This deletes all subfolders recursively.
