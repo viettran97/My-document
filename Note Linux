@@ -40,3 +40,45 @@ chmod -R 777 ./
 9. rmdir MAKE /s /q
 - /q : delete mà k cần hỏi lại
 - /s : Use /s option to delete the folder contents along with the folder. This deletes all subfolders recursively.
+
+___________________________________________________________________________________________________
+: cac yau to de vao lenh: + đọ ưu tiên
+1: cau truc thi truong (best)
+2. Nên 
+3. fibo
+4. OB + imbalance (tai key or key quan trong co OB chua su dung : vao lenh co the quan li dudoc : xac xuat thang cao)
+5. momentum
+
+* Khi xét toi mot xu hướng hoi ket thuc khi nao thì dua vao: fi bo, nen , cau truc khung nho (quan sat khung nhor den khi nao pha cau truc cua xu huong hoi thi can nhac vao lenh), OB chua su dung
+
+Note: quan sat nhiều khung thoi gia truoc khi vao lenh
+--------------------------------------------------------------------------------------------------------------
+- Khong giao dich luc ra tin
+- nen chu y quan sat tu 1-2h chiều den 9 -10 giờ dem
+- tuan thu nguyen tac , đung ki luat
+- cu vao lenh thoi, co quan li von roi, lâu dai deu dan la ok
+- nen quan sât hanh dong gia tai key or key quan trong
+ex: dang xu huong tang. tai key quan trong thi neu hai lan bi phe ban day xuong thi nen can nhac va lenh
+- truoc khi vao lenh nen can nhac nhieu yeu to roi nen ki vao lenh thi de thi truong chay thoi_ co quan li von roi, nhin bieu do nhieu cung anh huong tam li nhieu
+-----------------------------------------------------------------------------------------------------------
+thoi gian lam viec:(nen tap thoi quen len ke hoach , quản lí ci tiêu, neenlma f sheet chi tiêu, cộng quản lí thòi gian làm việc => tự do)
+- 6h: dạy
+- 7h-11h: back test phuong phap, lam retro_air , đọc tin tức
+  + Backtest: Sử dụng tradingview
+  + Đọc tin tức: mấy trang VN, mấy blogger nước ngoài, reseach.
+  + Testnet: feedback cho dự án, support cày role, dep tiền thật trải nghiệm dự án (nên follow 2-3 HST).
+- 1-1h30: Nghỉ trưa
+- 2h- 5h: quan sat thi truong, canh tin hieu vao lenh.
+khi khong co tin hieu tiep tuc hoc kien thuc crypto, nang cao kien thuc, tập trung chủ yếu research.
+-(5-6h): tap the thao
+- 8h -10h30: Quan sát thị trường, canh tín hiệu vào lệnh
+- 11h: ngủ
+-----------------------
+Hien tai neu thuan loi thi co hai nguon thu  nhap chinh:
+1. fx: Goal (15% / month).
+2. day (3tr/month).
+3. ama (không trông đợi nhiều).
+4. retro, test net.(long-term).
+5. co the can nhac la them upwork (doc nhieu tai lieu tieng anh vef email, sale page, blog) (long-term).
+
+-----------------------
