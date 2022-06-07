@@ -61,7 +61,7 @@ Note: quan sat nhiều khung thoi gia truoc khi vao lenh
 ex: dang xu huong tang. tai key quan trong thi neu hai lan bi phe ban day xuong thi nen can nhac va lenh
 - truoc khi vao lenh nen can nhac nhieu yeu to roi nen ki vao lenh thi de thi truong chay thoi_ co quan li von roi, nhin bieu do nhieu cung anh huong tam li nhieu
 -----------------------------------------------------------------------------------------------------------
-thoi gian lam viec:(nen tap thoi quen len ke hoach , quản lí ci tiêu, neenlma f sheet chi tiêu, cộng quản lí thòi gian làm việc => tự do)
+thoi gian lam viec:(nen tap thoi quen len ke hoach , quản lí chi tiêu, nên làm sheet chi tiêu, cộng quản lí thòi gian làm việc => tự do)
 - 6h: dạy
 - 7h-11h: back test phuong phap, lam retro_air , đọc tin tức
   + Backtest: Sử dụng tradingview
@@ -75,10 +75,16 @@ khi khong co tin hieu tiep tuc hoc kien thuc crypto, nang cao kien thuc, tập t
 - 11h: ngủ
 -----------------------
 Hien tai neu thuan loi thi co hai nguon thu  nhap chinh:
-1. fx: Goal (15% / month).
+1. fx: Goal (13% / month).
 2. day (3tr/month).
 3. ama (không trông đợi nhiều).
 4. retro, test net.(long-term).
 5. co the can nhac la them upwork (doc nhieu tai lieu tieng anh vef email, sale page, blog) (long-term).
 
 -----------------------
+Kế hoạch vào lệnh
+- Dự vốn bỏ vào: 40tr.
+- Goal: 13%/month (~5tr2).
+- Số lệnh/month: 14 <=> trung bình 3.5 lệnh/tuần với tỉ lệ R:R là 1:2.
+- Tỉ lệ 9 win, 5 lose () => tỉ lệ win: 64.2 %.
+- Đây là trường hợp rải lệnh. Trong trường hợp đạt target sớm của tháng đó thì dừng để làm việc khác (backtest, đọc tin tức).
