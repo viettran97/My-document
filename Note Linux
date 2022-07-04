@@ -84,9 +84,9 @@ Hien tai neu thuan loi thi co hai nguon thu  nhap chinh:
 -----------------------
 Kế hoạch vào lệnh
 - Dự vốn bỏ vào: 40tr.
-- Goal: 13%/month (~5tr2).
+- Goal: 20%/month.
 - Số lệnh/month: 14 <=> trung bình 3.5 lệnh/tuần với tỉ lệ R:R là 1:2.
-- Tỉ lệ 9 win, 5 lose () => tỉ lệ win: 64.2 %.
+- Tỉ lệ 8 win, 6 lose () => tỉ lệ win: 57.14 %.
 - Đây là trường hợp rải lệnh. Trong trường hợp đạt target sớm của tháng đó thì dừng để làm việc khác (backtest, đọc tin tức).
 
 _________________________________________________________
@@ -109,10 +109,10 @@ Cách học kiến thức hiệu quả
 https://docs.google.com/document/d/1LpYSg5k8x1g4knqsYQYWGcgrZA0eouggQJvjBdxoLf4/edit
 https://docs.google.com/document/d/1Rhuy5nLl1rWHUQg1YyP4uoYWxZgX4VssdJAtoYIYH5A/edit
 ----------------------
-- kinh tế vĩ mô
+- Kinh tế vĩ mô
 + Lạm phát toàn cầu (chủ yếu 2 mặt hàng lương thực và năng lượng)
 + FED, ECB tăng lãi xuất, siết chặt tiền tệ
-+ Giá dầu tăng cao trong khi trung quốc đang trong tình trạng hạn chê đi lại do  dịch, dự đoán khi được giải tỏa, nhu cầu tăng cao khiến cho giá dầu tieeos tục tăng cao
++ Giá dầu tăng cao trong khi trung quốc đang trong tình trạng hạn chê đi lại do  dịch, dự đoán khi được giải tỏa, nhu cầu tăng cao khiến cho giá dầu tiep tục tăng cao
 + Chiến tranh chưa chấm dứt
 
 - Vi mô trong ngành
@@ -124,7 +124,8 @@ https://docs.google.com/document/d/1Rhuy5nLl1rWHUQg1YyP4uoYWxZgX4VssdJAtoYIYH5A/
 + Binance bị kiện, solona bị nghẽn mạng, nhiều công ty bị phấ sản (blockfi)
 + Cá mập chơi nhau, thanh toán nhau
 + Kinh tế vĩ mô không ổn định khiến các nhà đầu tư tìm kiếm các khoản đầu tư ít rủi ro hơn => dòng tiền rời khỏi thị trường
-+ 3AC bị phá sản, các ttaifsanr đang chờ bị thanh lý.
++ 3AC bị phá sản, các tai san đang chờ bị thanh lý
++ Cac san giao dich ben bo vuc pha san (blockfi. voyeger... bi FTX thau tom)=> FTX ngay cang muon chiem thi phan thi truong.
 
 - Các chỉ số vĩ mô ảnh hưởng đén quyết định của fed
 + lạm phát
