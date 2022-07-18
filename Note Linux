@@ -219,3 +219,17 @@ B3: Vẽ từ giá mở cửa đến vùng cao nhất hay thấp nhất của c�
 - Chú ý đến lực tăng or giảm của cây nến cuối cùng (phải mạnh và dứt khoát)
 - Vùng tạo bởi cụm nến có giá trị cao hơn nến đơn lẽ
 - Kiên nhẫn là key quan trọng nhất
+- Neu vung zone dai, khoan vao lenh limit, doi tao tin hieu moi vao lai
+- Trong supply zone: cay nen tang phia truoc phai co luc yeu hon cay nen giam tao ra supply zone.
+- Supply/demnad co gia tri hon tai dau con song
+- Chu y supply/demand tai khung thoi gian hien tai
+
+* Cach xac dinh vung supply/demand zone manh va nhung luu y
+*1: Vung cung cau manh thi su mat can bang cang lon => gia tang or giam ro rang, dut khoat.
+*2: supply/demand zone cung xu huong
+*3: supply/demand zone xuat hien tai key or key quan trong
+
+* Supply/demand het giá trị
+- Supply/demand đi càng lâu thì càng mất giá trị, thị trường quay lại Supply/demand càng nhau thì có giá trị cao hơn
+- Supply/demand mới: chưa test lần nào
+- Supply/demand cũ: test lại nhiều lần rồi, ít có giá trị hơn
