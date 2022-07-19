@@ -214,22 +214,32 @@ ex: I just did a pretty similar project to my previous client and it generated o
 B1: Giá giảm or tăng  mạnh
 B2: Xác định cây nến tăng or giảm cuối cùng
 B3: Vẽ từ giá mở cửa đến vùng cao nhất hay thấp nhất của cụm nến
-
+------------------
 * Lưu ý khi vẽ cung cầu (kinh nghiệm thực chiến)
 - Chú ý đến lực tăng or giảm của cây nến cuối cùng (phải mạnh và dứt khoát)
-- Vùng tạo bởi cụm nến có giá trị cao hơn nến đơn lẽ
-- Kiên nhẫn là key quan trọng nhất
-- Neu vung zone dai, khoan vao lenh limit, doi tao tin hieu moi vao lai
-- Trong supply zone: cay nen tang phia truoc phai co luc yeu hon cay nen giam tao ra supply zone.
+__ Vùng tạo bởi cụm nến có giá trị cao hơn nến đơn lẽ
+__ Neu vung zone dai, khoan vao lenh limit, doi tao tin hieu moi vao lai
+__ Trong supply zone: cay nen tang phia truoc phai co luc yeu hon cay nen giam tao ra supply zone.
 - Supply/demnad co gia tri hon tai dau con song
 - Chu y supply/demand tai khung thoi gian hien tai
-
+------------------
 * Cach xac dinh vung supply/demand zone manh va nhung luu y
 *1: Vung cung cau manh thi su mat can bang cang lon => gia tang or giam ro rang, dut khoat.
 *2: supply/demand zone cung xu huong
 *3: supply/demand zone xuat hien tai key or key quan trong
-
+-------------------
 * Supply/demand het giá trị
 - Supply/demand đi càng lâu thì càng mất giá trị, thị trường quay lại Supply/demand càng nhau thì có giá trị cao hơn
 - Supply/demand mới: chưa test lần nào
 - Supply/demand cũ: test lại nhiều lần rồi, ít có giá trị hơn
+
+--------------------
+* Nến Engulfing
+- Một nến Engulfing đẹp: 
+  + Giá đóng cửa trên điểm cao nhất or thấp nhất của cây nến trước đó
+  + Bình thường thì nó đóng qua giá mở cửa or đóng cửa
+  + Cực mạnh: Pinba + engulfing
+ 
+ * Vào lệnh và xác định xu hướng với Engulfing
+  1. Thị trường xuất hiện nhiều Engulfing => xu hướng tiếp diễn mạnh hơn
+  2. Trong một xu hướng có sự ủng hộ từ nến Engulfing => Tp được nhiều hơn 
