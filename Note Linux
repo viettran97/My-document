@@ -216,12 +216,10 @@ B2: Xác định cây nến tăng or giảm cuối cùng
 B3: Vẽ từ giá mở cửa đến vùng cao nhất hay thấp nhất của cụm nến
 ------------------
 * Lưu ý khi vẽ cung cầu (kinh nghiệm thực chiến)
-- Chú ý đến lực tăng or giảm của cây nến cuối cùng (phải mạnh và dứt khoát)
 __ Vùng tạo bởi cụm nến có giá trị cao hơn nến đơn lẽ
 __ Neu vung zone dai, khoan vao lenh limit, doi tao tin hieu moi vao lai
 __ Trong supply zone: cay nen tang phia truoc phai co luc yeu hon cay nen giam tao ra supply zone.
 - Supply/demnad co gia tri hon tai dau con song
-- Chu y supply/demand tai khung thoi gian hien tai
 ------------------
 * Cach xac dinh vung supply/demand zone manh va nhung luu y
 *1: Vung cung cau manh thi su mat can bang cang lon => gia tang or giam ro rang, dut khoat.
