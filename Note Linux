@@ -353,3 +353,46 @@ Chỉ số Stock to Flow được tính bằng tỷ lệ giữa Lượng cung h�
 STF = Stock / Flow
 
 7. Fear and Greed Index
+ 
+ Các chỉ số onchain series 4: 
+ 
+ 1. Biểu đồ HODL Waves
+ Bitcoin HODL Waves là một biểu đồ cho ta thấy số lượng các ví đang active và được gộp nhóm theo độ tuổi tính từ lần giao dịch cuối cùng.
+Tuổi thọ của 1 ví ở đây là được xem là thời gian ví đó giữ bitcoin trong bao lâu. Nếu ví đó phát sinh hành vi chuyển tiền, thì được tính lại thời gian từ lần cuối cùng.
+Dựa vào biểu đồ này, cho chúng ta thấy, ở các đỉnh chu kì trước của BTC, số lượng địa chỉ ví BTC có độ tuổi trung bình trẻ có sự gia tăng đột biến và phình to ra bất thường. Điều này cho thấy sức nóng của thị trường đang lớn dần lên và có thể đạt đỉnh.
+
+Và ở chiều ngược lại, khi thị trường đang sideway hoặc tạo đáy, thì số lượng BTC có tuổi đời non trẻ này tụt giảm và gia tăng vào nhóm ví có độ tuổi lớn hơn.
+2. MVRV Z-Score
+Chỉ số MVRV-Z được sử dụng để đánh giá khi một tài sản được định giá quá cao hoặc được định giá thấp hơn so với “giá trị hợp lý” của nó, được nhấn mạnh bởi độ lệch giữa vốn hóa thị trường và vốn hóa thực tế.
+Khi giá trị thị trường cao hơn đáng kể so với giá trị thực, nó chỉ ra đỉnh của thị trường (vùng màu đỏ), trong khi chiều ngược lại chỉ ra đáy thị trường (vùng màu xanh lá cây).
+Trong quá khứ, khi giá của BTC đạt đỉnh của một chu kì nào đó, thì lúc này chỉ số MVRV Z-SCORE sẽ chạm vào vùng màu đỏ. Báo hiệu rằng thị trường đang quá nóng và đây là thời điểm nên cân nhắc để chốt lời.
+
+3. RHODL Raito
+Trong quá khứ, chỉ báo này đã có 3 lần đi vào trong vùng màu hồng, tại vị trí 3 vòng tròn đỏ. Cả 3 lần này đều tương ứng với đỉnh của BTC trong các chu kì liên tiếp. Lúc này có thể cân nhắc bán ra vì thị trường có thể đã đạt đỉnh
+Ngược lại, việc tụt xuống khu vực màu xanh có liên quan đến đáy của giá BTC. Các vòng tròn màu xanh thể hiện khi chỉ số RHODL Ratio này tiến xuống dải màu xanh, giá của BTC cũng tạo đáy trong khoảng thời gian đó, trước khi lại bước vào một thời kì tăng trưởng mới.
+4. The Puell Multiple
+Chỉ báo Puell quan sát động thái của miner để phân tích các thái cực của thị trường BTC. Vì nó hiển thị các vùng có lợi nhuận thấp (vùng xanh) và cao (vùng đỏ) cho các thợ đào
+The Puell Multiple được tính bằng cách chia giá trị phát hành Bitcoin hàng ngày cho giá trị MA 365 ngày của chính nó
+Theo chỉ báo này, nếu đường màu đỏ đi vào khu vực màu hồng (tại các vòng tròn đỏ) thì thường là báo hiệu của việc thị trường đã đạt đỉnh.
+Ngược lại, nếu chỉ báo này tụt xuống khu vực màu xanh, thường báo hiệu cho vùng giá đáy của một chu kì mới (tuy nhiên đáy sâu và kéo dài bao lâu thì không ai biết)
+
+
+ Các chỉ số onchain series 5: 
+ 
+Các website thu phí 
+Bên dưới là các website có thu phí cho các gói từ cơ bản tới nâng cao để có thể xem được nhiều dữ liệu sát với thị trường hơn. Nói như vậy không có nghĩa là họ cấm hoàn toàn các users không mua gói trả phí, mà là gói FREE thì xem được khá ít dữ liệu và có độ trễ so với thời gian thực.
+
+    Glassnode (Thông tin thợ đào, Stablecoin, BTC, chỉ báo..v.v.)
+    Cryptoquant (Thông tin thợ đào, Stablecoin, BTC, chỉ báo..v.v.)
+    Intotheblock (Chuyên sâu DeFi)
+    Nansen (Check dòng tiền, ví cá voi,..v.v)
+    Dune Analytics (Research, DeFi, Report…v.v.)
+    Messari (Report, nhận đinh, phân tích thị trường..v.v.)
+
+Các website miễn phí
+
+    Lookintobitcoin (Chỉ báo, thông tin on-chain)
+    Blockchaincenter (Chỉ báo, thông tin on-chain)
+    Bitinforchart (Check ví cá mập, dòng tiền,..v.v)
+    Coinglass (Check lệnh thanh lý, Price, data..v.v)
+
