@@ -323,3 +323,33 @@ Bên cạnh đó, khi quan sát CPI, cũng cần biết chỉ số giá sản xu
 5. Chính sách tiền tệ
 6. Chính sách tài khóa
 - Là chính sách thông qua thuế và chi tiêu công để tác động tới nền kinh tế. Các chính sách này được Chính phủ ban hành và thực thi.
+
+__________________________________
+Các chỉ số onchain series 3: 
+1. Bitcoin: Exchange Reserve- All Exchange (tổng Bitcoin có tên các sàn giao dịch)
+https://cryptoquant.com/asset/btc/chart/exchange-flows/exchange-reserve?exchange=all_exchange&window=DAY&sma=0&ema=0&priceScale=log&metricScale=linear&chartStyle=line&fbclid=IwAR1C5xuff5C3eGIxN_rqQwXMqqgfXDgSNyFljwbvg7jFELIbZVrLAvO4BfM
+2. Bitcoin exchange Netflow
+Biểu đồ này thể hiện sự chênh lệch lượng BTC được nạp vào và rút ra trên các sàn giao dịch.
+Chỉ số này được tính theo công thức sau:
+Netflow = Inflow – Outflow
+Tức là dòng tiền từ BTC (Netflow) bằng lượng BTC nạp lên sàn giao dịch trừ đi lượng BTC được rút ra khỏi sàn.
+
+3. Stablecoin balance in exchange (lương stablecoin trên các sàn giao dịch)
+4. All stablecoin exchange netflow
+Netflow = Inflow – Outflow
+(Lượng USD nạp vào trừ đi lượng USD rút ra)
+
+5. Net Unreaalized Profit/Loss – NUPL (Lãi/lỗ ròng chưa được thực hiện)
+
+Chỉ số này được tính toán như sau:
+NUPL=(Market Cap-Realized Cap)/Market Cap
+Trong đó:
+Market cap: Được tính bằng giá hiện tại của Bitcoin nhân với số lượng BTC đang lưu hành trên thị trường.
+Realized Cap: Thay vì lấy giá hiện tại của Bitcoin, thì chúng ta lấy giá của mỗi Bitcoin khi nó được di chuyển lần cuối, tức là lần cuối cùng nó được gửi từ ví này sang ví khác. Sau đó, nó cộng tất cả các giá riêng lẻ đó và lấy trung bình của chúng. Cuối cùng, nhân giá trung bình đó với tổng số BTC đang lưu hành.
+Nói một cách đơn giản hơn, số liệu này cho chúng ta biết liệu thị trường Bitcoin hiện đang ở trạng thái lãi hay lỗ. Khi giá trị NUPL trên 0, điều đó có nghĩa là toàn bộ mạng Bitcoin hiện đang có lãi. Mặt khác, các giá trị âm ngụ ý rằng các nhà đầu tư trung bình đang thua lỗ vào thời điểm hiện tại.
+6. Mô hình Stock To Flow
+Nói một cách đơn giản, mô hình Stock to Flow (SF hoặc S2F) là một cách để đo độ dồi dào của một tài nguyên cụ thể. Trong đó Stock là trữ lượng còn Flow là lưu lượng.
+Chỉ số Stock to Flow được tính bằng tỷ lệ giữa Lượng cung hàng năm (Flow) và Tổng cung toàn bộ (Stock) của tài sản đó trên thị trường.
+STF = Stock / Flow
+
+7. Fear and Greed Index
