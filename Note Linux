@@ -413,3 +413,67 @@ Các website miễn phí
     - Một dự án có số điểm đánh giá từ 90 điểm trở lên thì tương đối an tâm
     
 
+    HƯỚNG DẨN KIỂM TRA THANH KHOẢN TRÊN POOCOIN CHO NGƯỜI MỚI
+    Liquidity (Thanh khoản) là gì?
+Liquidity hay còn gọi là tính thanh khoản, thể hiện qua việc mua, bán một khối lượng lớn tiền điện tử mà không (hoặc rất ít) gây tác động đến giá của đồng tiền điện tử đó.
+
+Tầm quan trọng của Liquidity
+Thanh khoản luôn là một vấn đề rất quan trọng và luôn được nhà đầu tư xem xét rất kỹ trước khi đầu tư trong bất kỳ thị trường nào. Đặc biệt, trong thị trường mới nổi như tiền điện tử, thanh khoản luôn là một vấn đề gây đau đầu cho nhiều nhà đầu tư sở hữu vốn lớn muốn vào thị trường.
+
+Vì thanh khoản gây ảnh hưởng lên giá, dẫn đến có sự chênh lệch giữa lợi nhuận dự kiến và lợi nhuận thực tế của loại tiền điện tử đó.
+
+Giả sử, anh em đang cầm một số lượng lớn token B và đang lãi 30%. Bây giờ, anh em muốn bán token B ra thật nhanh chóng để thu 30% lợi nhuận đó. Nhưng không may, token B đang có thanh khoản rất kém. Nếu anh em chấp nhận thanh khoản sẽ mất khoảng 50% giá trị tức từ lãi 30% anh em sẽ bị lỗ 35%.
+
+Trong trường hợp anh em muốn bán ra mà vẫn giữ được lợi nhuận 30% thì cần phải tốn nhiều thời gian hơn để bán ra ở mức giá đó. Tuy nhiên, thị trường đâu chỉ có mỗi mình anh em giao dịch. Nếu anh em không bán sẽ có người khác chấp nhận bán và khiến cho giá giảm xuống rất nhanh.
+
+Vì thế, việc lựa chọn đồng coin mang tính thanh khoản cao luôn là lựa chọn an toàn cho các nhà đầu tư vốn lớn.
+
+Anh em có thể tìm hiểu thêm về tính chất của các đồng coin/token trong thị trường tiền điện tử ngay thông qua bài viết dưới đây.
+
+Tìm hiểu: Crypto là gì? Tất tần tật về đầu tư Cryptocurrency
+
+03 yếu tố ảnh hưởng đến thanh khoản
+Mức độ phổ biến của dự án
+Yếu tố này thể hiện được sự quan tâm của cộng đồng dành cho đồng coin là nhiều hay ít. Thông thường, một đồng coin càng phổ biến, thì càng được nhiều người giao dịch. 
+
+Có thể lấy ví dụ với top 10 đồng có vốn hóa lớn nhất hiện tại, thì đã có 5/10 đồng nằm cũng nằm trong top 10 có khối lượng giao dịch lớn nhất trong 24h.
+
+
+Top 10 đồng coin có Volume giao dịch cao nhất trong 24h. Nguồn: Coingecko
+
+Độ hype của cộng đồng
+Thật ra yếu tố này cũng chỉ ra một phần sự quan tâm từ các nhà đầu tư như trên, nhưng có điều đôi khi sẽ nằm ở các tài sản không phổ biến. 
+
+Mình lấy ví dụ: Trước đây không ai biết đến SHIB (token của Shiba), nhưng từ ngày DOGE được FOMO, SHIB là token tiếp theo được nhiều người tham gia giao dịch. Thậm chí có lúc còn đạt trong top 10 đồng có khối lượng giao dịch trong ngày lớn nhất.
+
+Mức độ uy tín của dự án
+Không phải dự án nào uy tín cũng có thanh khoản cao, nhưng đa phần, các dự án có độ uy tín lớn thì thanh khoản cũng sẽ dồi dào. 
+
+Điều này khá dễ hiểu, bởi vì nếu một dự án làm việc nghiêm túc, cộng đồng cũng sẽ dành nhiều sự quan tâm hơn cho họ.
+
+Cách kiểm tra thanh khoản của các đồng coin
+Từ các ví dụ trên, anh em cũng hiểu rõ rằng tính thanh khoản là một yếu tố có ảnh hưởng lớn đến quyết định giao dịch. Vì nó thể hiện mức độ dễ dàng mua/bán, vào/ra một đồng coin bất kỳ nào đó.
+
+Vậy trước khi quyết định giao dịch một đồng coin nào đó, anh em cần kiểm tra mức độ thanh khoản của đồng coin đấy bằng cách kiểm tra 3 yếu tố sau:
+
+Khối lượng giao dịch trong 24 giờ.
+Độ sâu của Order Book.
+Độ chênh lệch giữa giá bid-ask.
+Volume giao dịch trong 24 giờ
+Volume giao dịch cho ta thấy mức độ thanh khoản của thị trường và dữ liệu về khối lượng giao dịch trong quá khứ. Đây cũng là một thông tin để dự đoán hành vi giá trong tương lai.
+
+Anh em có thể sử dụng Coinmarketcap, CoinGecko hoặc Coin98 Market để kiểm tra khối lượng giao dịch trong vòng 24 giờ qua của đồng coin mà mình muốn giao dịch.
+
+Hãy nhớ rằng đây là tổng khối lượng giao dịch, nên anh em phải xem đồng coin đó đang được giao dịch nhiều nhất trên sàn nào, và sàn giao dịch đó có nằm trong diện fake volume hay wash trading hay không. Nếu nằm trong diện này anh em rất khó để giao dịch nhanh chóng vì đa số là bot giao dịch.
+
+
+Order Book Depth
+Sau khi chọn được một sàn có volume giao dịch thật, anh em phải kiểm tra độ sâu của Order Book trên sàn giao dịch của đồng coin ấy.
+
+Điều này giúp cho việc ước lượng mức độ thanh khoản nếu giao dịch tức thì với khối lượng anh em mong muốn.
+
+Ví dụ: Anh em muốn bán 100,000 đồng A ở mức giá $0.1 và Buy Order Book Depth của đồng A thể hiện rằng: 
+
+Ở mức giá $0.1 chỉ có $40,000 đồng A.
+Ở mức giá $0.09 có thêm 60,000 đồng A nữa.
+Từ đó anh em tự ước lượng được độ chênh lệch nếu đánh đổi thanh khoản với tốc độ giao dịch
