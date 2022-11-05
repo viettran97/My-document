@@ -477,3 +477,21 @@ Ví dụ: Anh em muốn bán 100,000 đồng A ở mức giá $0.1 và Buy Order
 Ở mức giá $0.1 chỉ có $40,000 đồng A.
 Ở mức giá $0.09 có thêm 60,000 đồng A nữa.
 Từ đó anh em tự ước lượng được độ chênh lệch nếu đánh đổi thanh khoản với tốc độ giao dịch
+
+
+
+//////////////////
+Cách check một dự án meme: 
+1. Check tele, twitter để đánh giá chất lượng cộng đồng.
+2. Add contract vào token snipfer
+    - Không nên tin tuyệt đối vào web này
+    - Phải check thêm contract, liquidity
+    - Một dự án có số điểm đánh giá từ 90 điểm trở lên thì tương đối an tâm
+3. Check liquidity trên poocoin
+    - đối chiếu với lượng khóa trên token snipfer
+    - check time lock
+    - Một token tuy thấy đã lock or burn nhưng nếu contract chưa renounce owner or có hàm mint function thì chủ dự án có thể mint thêm token để xã.
+    - Chỉu dự án có thể chỉnh phí mua or bán cao để lấy tiền 
+    * Trong poocoin, check contract cửa dự án
+    - Search thử dự án có một số hàm như mint, excludefromfree = blacklist: không bán được. fee modifier (set tax fee), remove liquidity :rút thanh khoản
+    - Check contract creator (ví để tạo ra token khi deploy contract)
