@@ -487,7 +487,7 @@ Cách check một dự án meme:
     - Không nên tin tuyệt đối vào web này
     - Phải check thêm contract, liquidity
     - Một dự án có số điểm đánh giá từ 90 điểm trở lên thì tương đối an tâm
-3. Check liquidity trên poocoin or dextool
+3. Check liquidity trên poocoin(bsc) or dextool(ether)
     - đối chiếu với lượng khóa trên token snipfer
     - check time lock
 
@@ -498,3 +498,4 @@ Cách check một dự án meme:
     - Một token tuy thấy đã lock or burn nhưng nếu contract chưa renounce owner or có hàm mint function thì chủ dự án có thể mint thêm token để xã.
     - Chỉu dự án có thể chỉnh phí mua or bán cao để lấy tiền 
 4. Vao staysafu.org de biet phi mua ban la bao nhiêu or honeypot để check xem du an co cam minh ban khong
+5. vao bscheck.eu chech cac thong tin tong quan du an
