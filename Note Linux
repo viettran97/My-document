@@ -482,16 +482,19 @@ Từ đó anh em tự ước lượng được độ chênh lệch nếu đánh 
 
 //////////////////
 Cách check một dự án meme: 
-1. Check tele, twitter để đánh giá chất lượng cộng đồng.
+1. Check tele, twitter để đánh giá chất lượng cộng đồng, check webite, sô luong holder co nhieu không
 2. Add contract vào token snipfer
     - Không nên tin tuyệt đối vào web này
     - Phải check thêm contract, liquidity
     - Một dự án có số điểm đánh giá từ 90 điểm trở lên thì tương đối an tâm
-3. Check liquidity trên poocoin
+3. Check liquidity trên poocoin or dextool
     - đối chiếu với lượng khóa trên token snipfer
     - check time lock
+
+    * Trong poocoin, check contract cửa dự án
+    - Search thử dự án có một số hàm như mint, excludefromfree = blacklist: không bán được. fee modifier (set tax fee), remove liquidity :rút thanh khoản, 
+    modifieronlydev() co quyen tat ca du da renounce, modifieronlyowner() thi binh thuong
+    - Check contract creator (ví để tạo ra token khi deploy contract)
     - Một token tuy thấy đã lock or burn nhưng nếu contract chưa renounce owner or có hàm mint function thì chủ dự án có thể mint thêm token để xã.
     - Chỉu dự án có thể chỉnh phí mua or bán cao để lấy tiền 
-    * Trong poocoin, check contract cửa dự án
-    - Search thử dự án có một số hàm như mint, excludefromfree = blacklist: không bán được. fee modifier (set tax fee), remove liquidity :rút thanh khoản
-    - Check contract creator (ví để tạo ra token khi deploy contract)
+4. Vao staysafu.org de biet phi mua ban la bao nhiêu or honeypot để check xem du an co cam minh ban khong
