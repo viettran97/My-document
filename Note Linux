@@ -498,4 +498,4 @@ Cách check một dự án meme:
     - Một token tuy thấy đã lock or burn nhưng nếu contract chưa renounce owner or có hàm mint function thì chủ dự án có thể mint thêm token để xã.
     - Chỉu dự án có thể chỉnh phí mua or bán cao để lấy tiền 
 4. Vao staysafu.org de biet phi mua ban la bao nhiêu or honeypot để check xem du an co cam minh ban khong
-5. vao bscheck.eu chech cac thong tin tong quan du an
+5. vao bscheck.eu or marketmove de check cac thong tin tong quan du an
