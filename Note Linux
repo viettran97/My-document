@@ -493,7 +493,7 @@ Cách check một dự án meme:
 
     * Trong poocoin, check contract cửa dự án
     - Search thử dự án có một số hàm như mint, excludefromfree = blacklist: không bán được. fee modifier (set tax fee), remove liquidity :rút thanh khoản, 
-    modifieronlydev() co quyen tat ca du da renounce, modifieronlyowner() thi binh thuong
+    modifieronlydev() co quyen tat ca du da renounce, modifieronlyowner() thi binh thuong, check ham burn doi khi co dong code mint khi totalsupply += amount, check dau tien cua contract coi co nhieu ngay deploy hay khong
     - Check contract creator (ví để tạo ra token khi deploy contract)
     - Một token tuy thấy đã lock or burn nhưng nếu contract chưa renounce owner or có hàm mint function thì chủ dự án có thể mint thêm token để xã.
     - Chỉu dự án có thể chỉnh phí mua or bán cao để lấy tiền 
