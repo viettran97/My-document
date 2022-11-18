@@ -593,3 +593,76 @@ Kết luận:
 Mặc dù các hoạt động gom hàng GRT chưa thật sự ấn tượng. Nhưng có thể thấy sự tin tưởng từ cộng đồng đối với dự án từ đầu năm nay là rất lớn với lượng staking dồi dào.
 Đặc biệt lưu ý là lượng cung lưu hành của GRT đã chiếm gần 80% tổng cung và lượng stake đã chiếm gần 50% tổng cung lưu hành và vì thế mà giá GRT trong thời gian sắp tới có thể tăng nhanh và khó giảm tiếp.
 Các ví private sell và quỹ lớn như Framework không có động thái bán tháo. Các ví lớn staking GRT đang gom thêm GRT gần đây từ Coinbase và quan trọng nhất là dòng tiền chảy vào GRT từ đầu năm đang có xu hướng tăng tuyến tính.
+
+///////////////////////////////////////////////////////////////////
+
+TIPs Kinh Nghiệm Thực Chiến và Lời Khuyên Sắp Tới
+1/ Sự thật về dòng tiền trong crypto (cái này nên đọc kỹ để áp dụng cái sau)
+Khi thị trường tăng trưởng thì BTC tăng đầu tiên, do đây là đồng tiền có vốn hoá lớn nhất, dẫn đầu xu hướng của cả thị trường ⇒ Khi mà BTC tăng trưởng tốt thì báo đài tích cực đưa tin ⇒ thu hút dòng tiền mới từ thị trường=> BTC sẽ đi ngang và dòng tiền chảy đến altcoin trước tiên⇒ ETH tăng (top cap là các token nằm trong top 100) khi BTC đi ngang thì altcoin bật tăng rất là nhanh(alt season) ⇒ mid cap 100-300) các dApp trên các layer1⇒ lowcap meme trend chó mèo, rác ⇒ chốt lời qua BTC rồi ra fiat. Lưu ý từ dòng tiền midcap trở xuống đa số là dòng tiền đầu cơ( tức là đầu tư ngắn hạn )
+2/ Cách đánh kèo hồi khi BTC sập
+a, Trường hợp BTC sập không quá sâu(cái này nên cẩn thận vì sợ rơi vào trường hợp sập sâu)
+
+    Khi BTC sập thì tìm những con nào giảm ít và có khả năng hồi tốt thì noted lại
+    BTC sẽ chạm các vùng hỗ trợ như các vùng EMA34,89 và vùng hỗ trợ mạnh, tốt nhất là khung H4 trở lên và bật lên đây là thời điểm để múc altcoin
+    Xem lại các token đã noted lại rồi xem xu hướng ai hồi mạnh thì múc có thể kết hợp cả Fibo(thực ra cái này ai nhìn quen là biết nên kẻ fibo cho có lệ thôi)
+
+b, Trường hợp BTC sập sâu > 30%(sẽ diễn ra 1-2 ngày )
+Trường hợp BTC dump sâu trên 30% thường chỉ diễn ra 1 vài lần trong năm và thường diễn ra 1 trong 2 ngày .
+
+    Khi BTC sập sâu thì tìm các altcoin nào giảm tầm cỡ 50-60% xong noted lại
+    Chờ khi nào BTC có dấu hiệu hồi lại bằng cách xem lực bán yếu, volume bán cạn dần và BTC bắt đầu đi ngang( đừng tìm điểm vào ở mức hỗ trợ nhé vì sập sâu nó sẽ phá luôn các hỗ trợ như EMA, canh vùng hỗ trợ chỉ nên dùng khi BTC sập không quá sâu thôi)
+    Check lại altcoin giảm 50%-60% và mua, nếu tự tin thì dùng đòn bẩy để gia tăng lợi nhuận(đương nhiên cũng tuỳ con nhé chứ có những con giảm luôn không hồi nữa)
+
+Dù BTC sập nhẹ hay sập sâu thì điểm vào tốt nhất là chờ BTC sideway rồi hãy mua sau những cú sập đó, hoặc có thể canh mức kháng cực của chỉ số USDT.D ở khung H4, D1 để múc mình thấy khá hiệu quả.
+Có thể sau này có thêm cả BUSD.D và USDC.D nữa nhưng mà hiện tại stablecoin nào vốn hoá lớn nhất thì cứ để ý.
+=> Web check biến động coin : https://ckcoin.top/
+3/ Hướng đi tiếp theo.
+Hiện tại thì như chúng ta đã biết là CZ đã triệt hạ được SAM theo mình thì tiền sẽ đổ qua BNB mạnh hơn. Điều các bạn nên làm thực sự là:
+- Xem ở BNB chain có những gì có thể kiếm tiền
+- Dự án nào chưa list cặp BUSD
+- Con nào có thể list sàn Binance sắp tới
+Hãy hỏi các đội làm on-chain để có kế hoạch tốt. Xem họ đo lường được dự án nào trong watchlist trên có lượng tiền chuyển lên sàn 1 cách bất thường.
+Đội onchain tốt nhất hiện tại có thể follow : The Datafi VietNam
+Ngoài ra việc CEX sụp đổ thì có lẽ sau này những sàn DEX sẽ lên ngôi vì vậy hãy tập chơi sàn DEX từ bây giờ các DEX tốt có thể chơi là GMX, UNI, dYdX.
+5/ Khi một đồng coin trong downtrend bay không rõ lý do thì đó là do ra tin tức
+Trong downtrend thì thỉnh thoảng sẽ có những đồng tự dưng vô cớ bay nên thường nhiều ông sẽ bay vào short và dẫn đến cái kết sấp mặt. Đa số những con như thế này thường là những con đã vốn hoá khá to rồi nên short nếu hên thì về bờ được còn xui nếu short đúng đoạn fomo thì chỉ có chết. Với những token bay kiểu này thì dễ lên dễ xuống.
+Vd như ra tin Flow hợp tác với Meta,... thì có thể fomo thuận dòng tin tức nhưng mà nhớ là ra tin cái theo dòng tin tức luôn trễ 1 nhịp là đu đỉnh( mà chắc cái này khó ai làm được, có chăng thì canh short thôi)
+6/ Trong downtrend thì Defi lowcap sẽ bay trước.
+Nếu nói BTC là khởi nguyên của mọi loại crypto thì Defi chính là nơi níu giữ niềm tin cho crypto, người ta tin vào crypto vì người ta tin vào giá trị của nền tài chính phi tập trung là cái níu giữ dòng tiền trong downtrend. Vì vậy khi downtrend chán nản dòng tiền không có thì Defi sẽ bay trước.
+nên chọn những Defi lowcap(10-50M) trên Binance kết hợp chart rũ hàng như tips của sếp.
+ví dụ như AUCTION, WING,.. nên để TP xa thật xa nhé thường cỡ x4-x5 giá mua nếu không khớp thì chốt từ từ từng phần và thường đa số nó sẽ pump lên 1 mạch và xuống nhanh.
+7/ Sẽ có đồng coin lowcap list phái sinh của BNB pump rất ác.
+Downtrend thì đa số coin là giảm nên thỉnh thoảng sàn sẽ pump những coin defi hoặc coin rác trong đó những coin list phái sinh sẽ tăng nhanh nhưng giảm chậm và lúc này một số dân chơi sẽ nhảy vào short dẫn đến cái kết cụt tay . Khi funding quá -0,75% thì không nên Long Short gì cả đối với những coin kiểu này. Những con kiểu này có thể ưu tiên đánh kèo Fibo hồi.
+8/ Coin tăng theo hệ như ETH, BNB hệ meme,..hay còn gọi hệ sinh thái sẽ bay cùng nhau
+Sẽ có các cặp đồng coin bay cùng nhau thường sẽ có liên quan đến nhau thường là trong 1 hệ sinh thái, một sự liên kết nào đó ví dụ như coin trong hệ LUNA thì LUNC, ANC,.. sẽ bay khi mà LUNC bay mà LUNA chưa bay thì chúng ta có thể xem xét mua tương tự với những cặp token không liên quan cũng thế.
+9/ Đổi tên thay chart
+Khi một coin/token đã cũ và nhà tạo lập muốn tạo game mới thì họ sẽ đổi tên và thay chart, vì nếu nhìn cái chart cũ chia cả ngàn lần thì ai dám vào đúng không? Vì thế họ phải đổi tên và thay chart.
+Các bạn hãy lên Binance Anouncement tìm xem thông báo nào token nào sắp thay thì khi ra mắt có thể mua ít nếu dự án đã đổi tên cỡ trên 1 tháng rồi thì bỏ đi nhé.
+10/ Hệ BNB hoặc là những ai có backer mạnh sẽ pump
+Lý do mà Ryan chọn những fantoken của Binance không chọn của CHZ hay BITCI thì do CZ rất mạnh và CZ khá là tích cực đối với thị trường Crypto, sẽ tạo game mới cho anh em mình chơi. Tương tự sau này cũng vậy anh em hãy ưu tiên những dự án mà backer khủng đứng sau.
+p/s: Anh em để ý thêm sàn OKX nhé, OKX giờ là sàn top2 sau Binance. FTX thì oẳng rồi.
+11/ Những con mà pump theo tin tức cố định sẽ có pha rũ hàng cuối cùng rồi pump rất mạnh.
+Khi những sự kiện sắp tới nó quá rõ ràng nó được đưa ra một thông tin cố định vào ngày diễn ra thì thường gần đến ngày sẽ có pha dump mạnh nên có thể canh sát ngày đó mua hàng tuy nhiên cũng cần có STL đầy đủ nha
+Tin tức càng rõ ràng càng nhiều người biết, nhiều người để ý thì thường pump trước khá xa.
+Ví dụ như tin World Cup thì hầu như ai cũng biết và ai cũng biết cách chơi nên nó thường bay khá sớm. Còn với những tin như bầu cử quốc hội Mỹ thì ít ai biết và ít ai để ý thì nó sẽ dump gần sát ngày và pump liền ngay sau đó.
+Cái này còn gọi là đánh theo khung thời gian tuy nhiên cần đầu óc quan sát cao và khả năng suy luận + kết hợp xâu chuỗi tin tức
+12/ Trong downtrend coin rác càng pump càng Long đừng vào Short
+Thỉnh thoảng trong downtrend sẽ có một số coin không hiểu tự dưng lại pump mục đích là để tạo cuộc chơi và cũng để kill short, đa số anh em tâm lý thấy đồng nào tự dưng nó pump ngáo quá liền bay vào short và oẳng ngay sau đó, mấy con kiểu này thường là coin lowcap cỡ 50-100M có list phái sinh. Nếu muốn short thì nên nghiên cứu kỹ nhưng mà tốt nhất là đứng ngoài thôi
+Ví dụ như Unfi pump từ 2$ lên 40$ .
+13/ Đánh Long fomo thì dễ x tk hơn là Short
+Đánh Long vẫn an toàn hơn là short bất kể là downtrend hay uptrend, đánh long thì có thể fomo theo và có thể cơ may về bờ hơn là short, short thì khó khăn hơn và cần có kỹ năng cao hơn nhiều so với đánh Long, khi đánh Short thì hạn chế đánh Coin có thanh khoản thấp hay MarketCap bé dễ liệm lắm
+14/ Trùng tên và gần giống tên sẽ bay.
+Ví dụ như APT sắp list sàn con này thì nhiều người FOMO vì làm marketing mạnh nên sẽ có một số đồng coin giống tên sẽ bị pump luôn, tuy nhiên giống hệt tên thì gần như không có chỉ gần giống tên thôi, có thể mua một ít xổ số thử.
+15/ Không phải cứ mở 1 lượng lớn token thì giá sẽ giảm.
+Cái này đúng nhưng không đúng hoàn toàn thường thì token sẽ xả và giá sẽ giảm trước khi đến ngày trả lượng lớn token, nên kết hợp phân tích xem mô hình tokenomics hoạt động như thế nào, tỉ lệ ROI của các mức giá IDO, ICO ra làm sao. Nên quan sát kỹ và hành động từ trước đừng để đến sát ngày trả token mới hành động
+Check vesting token thì có các web đó là Token.unlocks.app và vestlab.io cả Dropstab và Cryptorank.io nữa
+16/ Trong downtrend nếu vùng không có thanh khoản thì hạn chế LongShort.
+Vùng thanh khoản mạnh là vùng nó tập trung nhiều orderbook các lệnh chờ mua chờ bán. Nên kết hợp các nến và volume, nếu nó tốt thì vùng đó là vùng thanh khoản mạnh và ngược lại. Khi vùng thanh khoản thấp thì rất dễ bị cá voi lái giá làm giá để kill longshort vì vậy hãy hạn chế.
+18/ Về PTKT
+Khi nến đi quá xa các đường trung bình động như EMA, MA trong khoảng thời gian dài thì giá sẽ có xu hướng tìm về đó EMA34, EMA89 ( cản hoặc hỗ trợ) dể retest lại .
+20/ Giá tăng hay giảm hay thì quan trọng nhất vẫn là bắt được nhịp
+Giá tăng hay giảm không quá quan trọng bằng việc bắt được nhịp, quan trọng nhất là chúng ta bơi theo xu hướng, trong Uptrend mà đánh Short thì tỉ lệ cháy tài khoản cao hơn và ngược lại trong Downtrend mà đánh Long thì dễ cháy tài khoản( tuy nhiên nếu bắt được theo sóng nhỏ thì ok). Tuy nhiên với người mới thì nên đánh thuận dòng con sóng lớn. Nên nhớ “mùa nào thức nấy”
+21/ Về sự thật fomo
+Những dự án mà bọn tây lông fomo thì Việt Nam mình cũng sẽ fomo theo nhưng những dự án mà Việt Nam fomo theo thì bọn tây lông còn khá quan ngại và sẽ dè chừng những dự án mà mình fomo vì thế hãy cẩn thận với những dự án mà chỉ Việt Nam fomo.
+Cách kiểm tra độ fomo thì check trên Twitter hoặc cái Kyber Trending Soon cũng khá hay và nhất định phải biết dùng Twitter
+22. Tất cả các đều trên đều áp dụng khi PHẢI đúng xu hướng BTC và thị trường.
